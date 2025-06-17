@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "company": "TechCorp Solutions",
+    "position": "Senior Flutter Developer",
+    "startDate": "2022-01-01",
+    "endDate": null,
+    "isCurrentJob": true,
+    "location": "Remote",
+    "description": "Leading mobile app development team, architecting scalable Flutter applications, and mentoring junior developers. Implemented CI/CD pipelines and improved app performance by 40%.",
+    "technologies": ["Flutter", "Dart", "Firebase", "AWS", "GraphQL", "Bloc"],
+    "achievements": [
+      "Led development of 5+ mobile applications",
+      "Reduced app loading time by 40%",
+      "Mentored 8 junior developers",
+      "Implemented automated testing reducing bugs by 60%"
+    ]
+  },
+  {
+    "id": 2,
+    "company": "Digital Innovations Ltd",
+    "position": "Flutter Developer",
+    "startDate": "2020-06-01",
+    "endDate": "2021-12-31",
+    "isCurrentJob": false,
+    "location": "Baku, Azerbaijan",
+    "description": "Developed and maintained multiple Flutter applications for various clients. Worked closely with design teams to implement pixel-perfect UIs and integrated various third-party services.",
+    "technologies": ["Flutter", "Dart", "REST API", "Provider", "SQLite"],
+    "achievements": [
+      "Delivered 10+ successful projects",
+      "Improved code quality with 90% test coverage",
+      "Collaborated with cross-functional teams",
+      "Implemented real-time features using WebSockets"
+    ]
+  },
+  {
+    "id": 3,
+    "company": "StartupHub",
+    "position": "Mobile App Developer",
+    "startDate": "2019-03-01",
+    "endDate": "2020-05-31",
+    "isCurrentJob": false,
+    "location": "Baku, Azerbaijan",
+    "description": "Specialized in developing innovative mobile applications for startups. Worked on rapid prototyping and MVP development, helping startups bring their ideas to market quickly.",
+    "technologies": ["Flutter", "React Native", "Firebase", "MongoDB"],
+    "achievements": [
+      "Developed 6 MVPs for different startups",
+      "Reduced development time by 50% with reusable components",
+      "Implemented offline-first architecture",
+      "Achieved 4.8+ rating on app stores"
+    ]
+  },
+  {
+    "id": 4,
+    "company": "Freelance",
+    "position": "Mobile Developer",
+    "startDate": "2018-01-01",
+    "endDate": "2019-02-28",
+    "isCurrentJob": false,
+    "location": "Remote",
+    "description": "Provided mobile development services to various clients worldwide. Focused on delivering high-quality applications with excellent user experience and performance optimization.",
+    "technologies": ["Flutter", "Native Android", "iOS", "Firebase"],
+    "achievements": [
+      "Completed 15+ freelance projects",
+      "Maintained 5-star rating on platforms",
+      "Built applications for 3 different industries",
+      "Established long-term client relationships"
+    ]
+  }
+] 

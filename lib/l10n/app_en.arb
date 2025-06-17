@@ -1,0 +1,93 @@
+{
+  "@@locale": "en",
+  "appTitle": "Ali Hasanov - Senior Flutter Developer",
+  "@appTitle": {
+    "description": "Main application title"
+  },
+  "home": "Home",
+  "about": "About",
+  "skills": "Skills",
+  "projects": "Projects",
+  "experience": "Experience",
+  "contact": "Contact",
+  "github": "GitHub",
+  
+  "heroGreeting": "Hi, I'm Ali 👋",
+  "heroDescription": "I build cross-platform apps",
+  "heroSkill1": "Clean UI",
+  "heroSkill2": "Flutter Web",
+  "heroSkill3": "Firebase Integration",
+  "viewProjects": "View Projects",
+  "contactMe": "Contact Me",
+  
+  "aboutTitle": "About Me",
+  "aboutDescription": "I'm a passionate Senior Flutter Developer with extensive experience in building high-quality cross-platform applications. I specialize in creating elegant user interfaces and robust backend integrations.",
+  "aboutEducation": "Azerbaijan State Oil and Industry University – Mechatronics & Robotics",
+  "yearsExperience": "Years Experience",
+  "projectsBuilt": "Projects Built",
+  
+  "skillsTitle": "My Skills",
+  "skillsDescription": "Technologies and tools I work with",
+  
+  "projectsTitle": "Featured Projects",
+  "projectsDescription": "Some of my notable work",
+  "viewProject": "View Project",
+  "sourceCode": "Source Code",
+  "techStack": "Tech Stack",
+  
+  "experienceTitle": "Work Experience",
+  "experienceDescription": "My professional journey",
+  "present": "Present",
+  
+  "githubTitle": "GitHub Profile",
+  "githubDescription": "Check out my open source contributions",
+  "publicRepos": "Public Repositories",
+  "followers": "Followers",
+  "following": "Following",
+  "githubStatistics": "GitHub Statistics",
+  "topLanguages": "Top Languages",
+  "viewOnGithub": "View on GitHub",
+  "downloadCV": "Download CV",
+  
+  "contactTitle": "Get In Touch",
+  "contactDescription": "Let's work together on your next project",
+  "yourName": "Your Name",
+  "yourEmail": "Your Email",
+  "yourMessage": "Your Message",
+  "sendMessage": "Send Message",
+  "messageSent": "Message sent successfully!",
+  "messageError": "Failed to send message. Please try again.",
+  
+  "telegramContact": "Contact via Telegram",
+  "whatsappContact": "Contact via WhatsApp",
+  "emailContact": "Send Email",
+  
+  "copyright": "© 2024 Ali Hasanov. All rights reserved.",
+  "madeWith": "Made with Flutter Web",
+  
+  "loading": "Loading...",
+  "error": "Error occurred",
+  "retry": "Retry",
+  "close": "Close",
+  
+  "chatbotWelcome": "Hello! I'm Ali Hasanov's portfolio ChatBot. How can I help you? 😊",
+  "chatbotGreeting": "Hello! I am Ali Hasanov's portfolio ChatBot. How can I help you?",
+  "chatbotIntroduction": "I am Ali Hasanov, a Senior Flutter Developer with 5+ years of experience specializing in mobile app development.",
+  "chatbotFlutter": "Flutter is a cross-platform framework created by Google. I use Flutter to create iOS and Android applications.",
+  "chatbotWhyFlutter": "I chose Flutter because: 1) Single codebase for iOS & Android 2) High performance 3) Great community 4) Google support",
+  "chatbotExperience": "I have 5+ years of Flutter development experience. I've worked on e-commerce, fintech, and enterprise applications.",
+  "chatbotEducation": "I have a Bachelor's degree in Computer Engineering and have completed various online courses.",
+  "chatbotSkills": "My main skills: Flutter, Dart, Firebase, REST API, State Management (Bloc, Provider), Git, and UI/UX design.",
+  "chatbotProjects": "I've worked on E-commerce app, Task Manager, Weather App and more projects. Detailed information is available in the portfolio.",
+  "chatbotContact": "You can contact me via email or LinkedIn. Contact information is available in the portfolio.",
+  "chatbotFuture": "My future plans: gaining more experience in Flutter Web & Desktop development and acquiring knowledge in AI/ML field.",
+  "chatbotThanks": "You're welcome! Feel free to ask more questions about my experience and skills.",
+  "chatbotHelp": "I can provide information about Ali Hasanov: experience, skills, projects, education, etc. What would you like to know?",
+  "chatbotFallback": "Sorry, I don't have information about that. You can ask another question? For example: \"experience\", \"skills\", \"projects\" or \"contact\".",
+  "chatbotTyping": "Typing...",
+  "chatbotPlaceholder": "Type your message...",
+  "chatbotSampleQuestions": "Sample questions:",
+  
+  "securityOverlayTitle": "This screen is currently hidden for security reasons. To view it, your cursor must remain on this page.",
+  "securityOverlayHint": "Click"
+} 

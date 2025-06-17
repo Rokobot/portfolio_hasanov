@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Mobile App",
+    "description": "A comprehensive e-commerce mobile application built with Flutter, featuring user authentication, product catalog, shopping cart, and payment integration.",
+    "image": "assets/images/default_project.png",
+    "technologies": ["Flutter", "Firebase", "Stripe", "Provider"],
+    "githubUrl": "https://github.com/alihasanov/ecommerce-app",
+    "liveUrl": "",
+    "featured": true,
+    "year": 2024
+  },
+  {
+    "id": 2,
+    "title": "Task Management Dashboard",
+    "description": "A responsive web dashboard for task management with real-time updates, team collaboration features, and advanced analytics.",
+    "image": "assets/images/default_project.png",
+    "technologies": ["Flutter Web", "Firebase", "GraphQL", "Bloc"],
+    "githubUrl": "https://github.com/alihasanov/task-dashboard",
+    "liveUrl": "https://task-dashboard-demo.web.app",
+    "featured": true,
+    "year": 2024
+  },
+  {
+    "id": 3,
+    "title": "Weather Forecast App",
+    "description": "Beautiful weather application with location-based forecasts, interactive maps, and weather alerts using multiple weather APIs.",
+    "image": "assets/images/default_project.png",
+    "technologies": ["Flutter", "REST API", "Hive", "Provider"],
+    "githubUrl": "https://github.com/alihasanov/weather-app",
+    "liveUrl": "",
+    "featured": true,
+    "year": 2023
+  },
+  {
+    "id": 4,
+    "title": "Social Media App",
+    "description": "A full-featured social media application with real-time messaging, photo sharing, stories, and social interactions.",
+    "image": "assets/images/default_project.png",
+    "technologies": ["Flutter", "Firebase", "Socket.io", "Bloc"],
+    "githubUrl": "https://github.com/alihasanov/social-app",
+    "liveUrl": "",
+    "featured": false,
+    "year": 2023
+  },
+  {
+    "id": 5,
+    "title": "Fitness Tracker",
+    "description": "Health and fitness tracking application with workout routines, nutrition tracking, and progress analytics.",
+    "image": "assets/images/default_project.png",
+    "technologies": ["Flutter", "SQLite", "Charts", "Provider"],
+    "githubUrl": "https://github.com/alihasanov/fitness-tracker",
+    "liveUrl": "",
+    "featured": false,
+    "year": 2023
+  },
+  {
+    "id": 6,
+    "title": "Banking App UI",
+    "description": "Modern banking application UI with smooth animations, biometric authentication, and intuitive financial management features.",
+    "image": "assets/images/default_project.png",
+    "technologies": ["Flutter", "Animations", "Local Auth", "Provider"],
+    "githubUrl": "https://github.com/alihasanov/banking-ui",
+    "liveUrl": "",
+    "featured": false,
+    "year": 2022
+  }
+] 
