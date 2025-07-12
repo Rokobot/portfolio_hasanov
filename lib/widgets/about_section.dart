@@ -47,6 +47,20 @@ class AboutSection extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
+                  Text(
+                    l10n.aboutEducation,
+                    style: AppTheme.getBodyMedium(appProvider.isDarkMode).copyWith(
+                      fontStyle: FontStyle.italic,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    l10n.aboutEducation,
+                    style: AppTheme.getBodyMedium(appProvider.isDarkMode).copyWith(
+                      fontStyle: FontStyle.italic,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                   const SizedBox(height: 60),
                   ResponsiveHelper.isMobile(context)
                       ? Column(

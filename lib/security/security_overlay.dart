@@ -86,7 +86,9 @@ class _SecurityOverlayState extends State<SecurityOverlay>
     final l10n = AppLocalizations.of(context)!;
     final isMobile = ResponsiveHelper.isMobile(context);
 
-    return AnimatedBuilder(
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: AnimatedBuilder(
       animation: _fadeAnimation,
       builder: (context, child) {
         return Opacity(
@@ -94,7 +96,7 @@ class _SecurityOverlayState extends State<SecurityOverlay>
           child: _buildOverlayContent(l10n, isMobile),
         );
       },
-    );
+    ),);
   }
 
   Widget _buildOverlayContent(AppLocalizations l10n, bool isMobile) {

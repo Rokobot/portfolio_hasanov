@@ -217,6 +217,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         value: appProvider.currentLocale,
         dropdownColor: AppTheme.getSurfaceColor(appProvider.isDarkMode),
         underline: const SizedBox(),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         icon: Icon(Icons.language, color: AppTheme.getTextSecondaryColor(appProvider.isDarkMode)),
         items: appProvider.availableLocales.entries.map((entry) {
           return DropdownMenuItem<Locale>(

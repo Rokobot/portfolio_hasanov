@@ -56,7 +56,7 @@ class ProjectsSection extends StatelessWidget {
                       crossAxisSpacing: 30,
                       childAspectRatio: 0.8,
                     ),
-                    itemCount: 3,
+                    itemCount: 9,
                     itemBuilder: (context, index) => _AnimatedProjectCard(
                       index: index,
                       isDarkMode: appProvider.isDarkMode,
@@ -151,7 +151,7 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
       id: widget.index + 1,
       title: projectData['title'] as String,
       description: projectData['description'] as String,
-      image: 'assets/images/default_project.png',
+      image: projectData['image'] as String? ?? 'assets/images/default_project.png',
       technologies: List<String>.from(projectData['technologies'] as List),
       githubUrl: 'https://github.com/alihasanov/flutter-project-${widget.index + 1}',
       liveUrl: 'https://flutter-project-${widget.index + 1}.web.app',
@@ -191,22 +191,67 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
     final l10n = AppLocalizations.of(context)!;
     final projects = [
       {
-        'title': 'E-Commerce App',
-        'description': 'Full-featured mobile e-commerce application with user authentication, product catalog, and payment integration.',
-        'technologies': ['Flutter', 'Firebase', 'Stripe'],
-        'icon': Icons.shopping_cart,
+        'title': 'Minannonse',
+        'description': 'Gelişmiş ilanlar ve duyurular platformu. Kullanıcıların kolayca ilan oluşturabileceği ve yönetebileceği modern bir uygulama.',
+        'technologies': ['Flutter', 'Firebase', 'Bloc'],
+        'icon': Icons.campaign,
+        'image': 'assets/images/minannonse_app.png',
       },
       {
-        'title': 'Task Manager',
-        'description': 'Responsive web dashboard for task management with real-time updates and team collaboration.',
-        'technologies': ['Flutter Web', 'Firebase', 'Bloc'],
-        'icon': Icons.task_alt,
-      },
-      {
-        'title': 'Weather App',
-        'description': 'Beautiful weather application with location-based forecasts and interactive maps.',
+        'title': 'TezYu',
+        'description': 'Akademik tez ve araştırma projelerini yönetmek için tasarlanmış kapsamlı platform. Öğrenci ve danışman etkileşimi.',
         'technologies': ['Flutter', 'REST API', 'Provider'],
-        'icon': Icons.wb_sunny,
+        'icon': Icons.school,
+        'image': 'assets/images/tezyu_app.png',
+      },
+      {
+        'title': 'NextGeneration',
+        'description': 'Yeni nesil teknoloji çözümleri sunan inovatif platform. Kullanıcı deneyimini önceleyen modern tasarım.',
+        'technologies': ['Flutter Web', 'GraphQL', 'Riverpod'],
+        'icon': Icons.rocket_launch,
+        'image': 'assets/images/next_generation_app.png',
+      },
+      {
+        'title': 'Zulamed',
+        'description': 'Sağlık sektörüne yönelik dijital çözümler platformu. Hasta takibi ve randevu yönetimi sistemi.',
+        'technologies': ['Flutter', 'Firebase', 'GetX'],
+        'icon': Icons.medical_services,
+        'image': 'assets/images/zulamed_app.png',
+      },
+      {
+        'title': 'Emiland',
+        'description': 'Emlak sektörü için kapsamlı yönetim sistemi. Gayrimenkul listeleme, takip ve analiz araçları.',
+        'technologies': ['Flutter', 'PostgreSQL', 'Bloc'],
+        'icon': Icons.home_work,
+        'image': 'assets/images/emiland_app.png',
+      },
+      {
+        'title': 'Superfon',
+        'description': 'Gelişmiş telefon ve iletişim yönetimi uygulaması. Çoklu hat desteği ve akıllı çağrı yönlendirme.',
+        'technologies': ['Flutter', 'WebRTC', 'Provider'],
+        'icon': Icons.phone_in_talk,
+        'image': 'assets/images/superfon_app.png',
+      },
+      {
+        'title': 'Yurd',
+        'description': 'Öğrenci yurt ve konaklama yönetim sistemi. Rezervasyon, ödeme ve olanaklar takibi.',
+        'technologies': ['Flutter', 'MongoDB', 'Riverpod'],
+        'icon': Icons.apartment,
+        'image': 'assets/images/yurd_app.png',
+      },
+      {
+        'title': 'Paytolia',
+        'description': 'Güvenli ve hızlı dijital ödeme çözümleri platformu. Çoklu para birimi desteği ve güvenli işlemler.',
+        'technologies': ['Flutter', 'Stripe', 'Bloc'],
+        'icon': Icons.payment,
+        'image': 'assets/images/paytolia_app.png',
+      },
+      {
+        'title': 'Bonpini',
+        'description': 'Akıllı taksi çağırma ve ulaşım yönetimi uygulaması. GPS takibi ve gerçek zamanlı konum paylaşımı.',
+        'technologies': ['Flutter', 'Google Maps', 'Provider'],
+        'icon': Icons.local_taxi,
+        'image': 'assets/images/bonpini_app.png',
       },
     ];
 
@@ -284,24 +329,55 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
                               ),
                             ] : null,
                           ),
-                          child: Center(
-                            child: TweenAnimationBuilder<double>(
-                              duration: const Duration(milliseconds: 400),
-                              tween: Tween<double>(
-                                begin: 0.0,
-                                end: _isHovered ? 1.0 : 0.0,
-                              ),
-                              builder: (context, value, child) {
-                                return Transform.scale(
-                                  scale: 1.0 + (value * 0.2),
-                                  child: Icon(
-                                    project['icon'] as IconData,
-                                    size: 60 + (value * 12),
-                                    color: AppTheme.primaryColor,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(14),
+                            child: project['image'] != null
+                                ? Image.asset(
+                                    project['image'] as String,
+                                    fit: BoxFit.cover,
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Center(
+                                        child: TweenAnimationBuilder<double>(
+                                          duration: const Duration(milliseconds: 400),
+                                          tween: Tween<double>(
+                                            begin: 0.0,
+                                            end: _isHovered ? 1.0 : 0.0,
+                                          ),
+                                          builder: (context, value, child) {
+                                            return Transform.scale(
+                                              scale: 1.0 + (value * 0.2),
+                                              child: Icon(
+                                                project['icon'] as IconData,
+                                                size: 60 + (value * 12),
+                                                color: AppTheme.primaryColor,
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      );
+                                    },
+                                  )
+                                : Center(
+                                    child: TweenAnimationBuilder<double>(
+                                      duration: const Duration(milliseconds: 400),
+                                      tween: Tween<double>(
+                                        begin: 0.0,
+                                        end: _isHovered ? 1.0 : 0.0,
+                                      ),
+                                      builder: (context, value, child) {
+                                        return Transform.scale(
+                                          scale: 1.0 + (value * 0.2),
+                                          child: Icon(
+                                            project['icon'] as IconData,
+                                            size: 60 + (value * 12),
+                                            color: AppTheme.primaryColor,
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   ),
-                                );
-                              },
-                            ),
                           ),
                         ),
                         const SizedBox(height: 20),

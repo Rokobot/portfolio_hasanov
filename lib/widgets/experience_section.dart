@@ -135,40 +135,45 @@ class _AnimatedExperienceCardState extends State<_AnimatedExperienceCard>
   Widget build(BuildContext context) {
     final experiences = [
       {
-        'title': 'Senior Flutter Developer',
-        'company': 'Tech Innovation Co.',
+        'title': 'Middle Flutter Developer',
+        'company': 'GreenPay',
         'period': '2022 - Present',
-        'description': 'Leading mobile app development team, architecting scalable Flutter applications, and mentoring junior developers.',
+        'description': 'At GreenPay, I implement integrations with payment systems, including designing the payment architecture on the mobile side, and I use advanced Flutter technologies.',
         'achievements': [
-          'Led development of 5+ mobile applications',
-          'Implemented CI/CD pipelines reducing deployment time by 40%',
-          'Mentored 3 junior developers'
+          'Integrated multiple national and international payment systems into mobile apps',
+          'Designed and implemented scalable payment architecture for GreenPay mobile platform',
+          'Utilized advanced Flutter techniques including custom animations, state management (Provider, Bloc), and performance optimization',
+          'Collaborated with backend team to optimize API communication and data security',
+          'Provided code reviews and Flutter mentorship within the team'
         ],
         'icon': Icons.code,
         'color': const Color(0xFF4CAF50),
       },
       {
-        'title': 'Flutter Developer',
-        'company': 'Digital Solutions Ltd.',
+        'title': 'Middle Flutter Developer',
+        'company': 'Alfa Soft',
         'period': '2020 - 2022',
-        'description': 'Developed cross-platform mobile applications using Flutter and integrated various APIs and services.',
-        'achievements': [
-          'Built 10+ mobile applications',
-          'Integrated payment gateways and analytics',
-          'Improved app performance by 30%'
+        'description': '"Developed well-structured and scalable cross-platform mobile applications using Flutter for renowned products like Taxo, Yurd, Ruffle, and Emiland. Applied advanced state management techniques and collaborated closely on architectural design using Repository pattern and clean architecture principles."',
+        "achievements": [
+          "Implemented advanced state management solutions using Bloc, Cubit, and Provider",
+          "Designed and maintained modular Repository architecture for scalable codebase",
+          "Collaborated with product teams to integrate payment gateways, analytics, and third-party APIs",
+          "Optimized app performance and load time by 30% through profiling and best practices"
         ],
         'icon': Icons.mobile_friendly,
         'color': const Color(0xFF2196F3),
       },
       {
-        'title': 'Mobile App Developer',
-        'company': 'StartUp Ventures',
+        'title': 'Flutter Developer',
+        'company': 'Yup Tech',
         'period': '2018 - 2020',
-        'description': 'Started career in mobile development, worked on native Android and iOS before transitioning to Flutter.',
-        'achievements': [
-          'Developed 5+ native mobile apps',
-          'Learned Flutter and Dart',
-          'Contributed to open source projects'
+        'description': 'Contributed to multiple mobile projects including Miannonse, TezYu, and Zulamed. Transitioned from native Android/iOS to Flutter development, and led the complete development of Zulamed from scratch using a high-level future-proof architecture.',
+        "achievements": [
+          "Built Zulamed app from the ground up with scalable Future-based architecture",
+          "Participated in the development of Miannonse and TezYu mobile applications",
+          "Gained solid experience transitioning from native to cross-platform Flutter development",
+          "Designed clean and modular project structures using best Flutter practices",
+          "Collaborated with backend teams to integrate REST APIs and ensure seamless data flow"
         ],
         'icon': Icons.phone_android,
         'color': const Color(0xFFFF9800),

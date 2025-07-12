@@ -12,14 +12,14 @@ class AppConstants {
   static const String email = 'ali.hasanov@email.com'; // Replace with actual email
   
   // Experience
-  static const int yearsOfExperience = 6;
-  static const int totalProjects = 25;
+  static const int yearsOfExperience = 3;
+  static const int totalProjects = 9;
   
   // Assets Paths
-  static const String defaultProfileImage = 'assets/images/default.png';
+  static const String defaultProfileImage = 'assets/images/profile_image.png';
   static const String defaultProjectImage = 'assets/images/default_project.png';
   static const String defaultSkillImage = 'assets/images/default_skill.png';
-  static const String defaultGithubImage = 'assets/images/default_github.png';
+  static const String defaultGithubImage = 'assets/images/profile_image.png';
   
   // Animation Durations
   static const Duration shortAnimation = Duration(milliseconds: 300);

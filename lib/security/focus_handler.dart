@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
 class FocusHandler extends ChangeNotifier with WidgetsBindingObserver {
@@ -8,10 +9,14 @@ class FocusHandler extends ChangeNotifier with WidgetsBindingObserver {
 
   FocusHandler() {
     WidgetsBinding.instance.addObserver(this);
-    _setupWebFocusListeners();
+    if (kIsWeb) {
+      _setupWebFocusListeners();
+    }
   }
 
   void _setupWebFocusListeners() {
+    if (!kIsWeb) return;
+    
     // Web focus/blur events
     html.window.onFocus.listen((_) {
       _updateFocus(true);
@@ -23,7 +28,7 @@ class FocusHandler extends ChangeNotifier with WidgetsBindingObserver {
 
     // Visibility change events
     html.document.onVisibilityChange.listen((_) {
-      final isVisible = !html.document.hidden!;
+      final isVisible = html.document.hidden != null ? !html.document.hidden! : true;
       _updateFocus(isVisible);
     });
 
