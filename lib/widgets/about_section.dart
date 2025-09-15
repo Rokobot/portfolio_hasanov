@@ -41,21 +41,21 @@ class AboutSection extends StatelessWidget {
                   ),
                   const SizedBox(height: 40),
                   Text(
-                    l10n.aboutEducation,
+                    l10n.educationBachelor,
                     style: AppTheme.getBodyMedium(appProvider.isDarkMode).copyWith(
                       fontStyle: FontStyle.italic,
                     ),
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    l10n.aboutEducation,
+                    l10n.educationMaster,
                     style: AppTheme.getBodyMedium(appProvider.isDarkMode).copyWith(
                       fontStyle: FontStyle.italic,
                     ),
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    l10n.aboutEducation,
+                    l10n.educationPhD,
                     style: AppTheme.getBodyMedium(appProvider.isDarkMode).copyWith(
                       fontStyle: FontStyle.italic,
                     ),

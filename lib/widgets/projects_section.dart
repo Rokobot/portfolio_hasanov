@@ -56,7 +56,7 @@ class ProjectsSection extends StatelessWidget {
                       crossAxisSpacing: 30,
                       childAspectRatio: 0.8,
                     ),
-                    itemCount: 9,
+                    itemCount: 8,
                     itemBuilder: (context, index) => _AnimatedProjectCard(
                       index: index,
                       isDarkMode: appProvider.isDarkMode,
@@ -192,64 +192,57 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
     final projects = [
       {
         'title': 'Minannonse',
-        'description': 'Gelişmiş ilanlar ve duyurular platformu. Kullanıcıların kolayca ilan oluşturabileceği ve yönetebileceği modern bir uygulama.',
-        'technologies': ['Flutter', 'Firebase', 'Bloc'],
+        'description': 'İnkişaf etmiş elanlar və bildirişlər platformasıdır ki, istifadəçilərə elan yaratmaq, paylaşmaq və idarə etmək imkanı verir. Platforma, elanların axtarışı və təşkilini asanlaşdıraraq rahat və effektiv istifadə təcrübəsi təmin edir.',
+        'technologies': ['Flutter', 'Firebase', 'Cubit', 'REST API'],
         'icon': Icons.campaign,
         'image': 'assets/images/minannonse_app.png',
       },
       {
         'title': 'TezYu',
-        'description': 'Akademik tez ve araştırma projelerini yönetmek için tasarlanmış kapsamlı platform. Öğrenci ve danışman etkileşimi.',
-        'technologies': ['Flutter', 'REST API', 'Provider'],
+        'description': 'Tezyu tətbiqi, maşınlara ən yaxın yuma mərkəzlərini tapmaq üçün hazırlanmışdır. İstifadəçilərə sürətli və rahat xidmət göstərərək vaxt və səy qənaəti təmin edir.',
+        'technologies': ['Flutter', 'REST API', 'Provider', 'Rive', 'Hive'],
         'icon': Icons.school,
         'image': 'assets/images/tezyu_app.png',
       },
       {
         'title': 'NextGeneration',
-        'description': 'Yeni nesil teknoloji çözümleri sunan inovatif platform. Kullanıcı deneyimini önceleyen modern tasarım.',
-        'technologies': ['Flutter Web', 'GraphQL', 'Riverpod'],
+        'description': 'Kurs məlumatlarını, dərs proqramlarını və müəllim detallarını istifadəçilərə rahat və interaktiv şəkildə təqdim edən innovativ platformadır.',
+        'technologies': ['Flutter', 'Provider', 'Rive', 'Hive', 'Firebase'],
         'icon': Icons.rocket_launch,
         'image': 'assets/images/next_generation_app.png',
       },
       {
         'title': 'Zulamed',
-        'description': 'Sağlık sektörüne yönelik dijital çözümler platformu. Hasta takibi ve randevu yönetimi sistemi.',
-        'technologies': ['Flutter', 'Firebase', 'GetX'],
+        'description': 'Sağlıq sektoruna yönəlik rəqəmsal platforma xəstə takibi və randevu idarəetməsini asanlaşdırır. AI dəstəkli chat sistemi isə pasiyentlərə və həkimlərə 24/7 dəstək göstərir..',
+        'technologies': ['Flutter', 'Firebase', 'Provider', 'Future Architecture', 'REST API'],
         'icon': Icons.medical_services,
         'image': 'assets/images/zulamed_app.png',
       },
       {
         'title': 'Emiland',
-        'description': 'Emlak sektörü için kapsamlı yönetim sistemi. Gayrimenkul listeleme, takip ve analiz araçları.',
-        'technologies': ['Flutter', 'PostgreSQL', 'Bloc'],
+        'description': 'Azərbaycanın ən böyük geyim şirkəti olan Emiland üçün daxili tətbiqlər hazırlanmışdır. Bu tətbiqlər Flutter ilə ən yüksək səviyyədə işlənib və istifadəçilərə smooth interfeys təqdim edir.',
+        'technologies':['Flutter', 'Firebase', 'Provider'],
         'icon': Icons.home_work,
         'image': 'assets/images/emiland_app.png',
       },
       {
         'title': 'Superfon',
-        'description': 'Gelişmiş telefon ve iletişim yönetimi uygulaması. Çoklu hat desteği ve akıllı çağrı yönlendirme.',
-        'technologies': ['Flutter', 'WebRTC', 'Provider'],
+        'description': 'Bu tətbiq Superfonun daxili sistemi olaraq hazırlanmışdır və şirkətin maliyyə əməliyyatlarının idarə olunmasını tamamilə mərkəzləşdirilmiş şəkildə həyata keçirir. Burada istifadəçilər ödənişləri izləyə, xərcləri və gəlirləri təhlil edə, həmçinin maliyyə hesabatlarını asanlıqla əldə edə bilirlər.',
+        'technologies': ['Flutter', 'Firebase', 'Provider', 'REST API'],
         'icon': Icons.phone_in_talk,
         'image': 'assets/images/superfon_app.png',
       },
       {
         'title': 'Yurd',
-        'description': 'Öğrenci yurt ve konaklama yönetim sistemi. Rezervasyon, ödeme ve olanaklar takibi.',
-        'technologies': ['Flutter', 'MongoDB', 'Riverpod'],
+        'description': 'Yurd tətbiqi istifadəçilərə müxtəlif kampaniyalar təqdim edir və telefon və digər cihaz aksesuarlarının satışını həyata keçirir. Burada həmçinin müxtəlif növ bonus və hədiyyə kampaniyaları mövcuddur.',
+        'technologies': ['Flutter', 'Firebase', 'Provider', 'REST API'],
         'icon': Icons.apartment,
         'image': 'assets/images/yurd_app.png',
       },
       {
-        'title': 'Paytolia',
-        'description': 'Güvenli ve hızlı dijital ödeme çözümleri platformu. Çoklu para birimi desteği ve güvenli işlemler.',
-        'technologies': ['Flutter', 'Stripe', 'Bloc'],
-        'icon': Icons.payment,
-        'image': 'assets/images/paytolia_app.png',
-      },
-      {
         'title': 'Bonpini',
-        'description': 'Akıllı taksi çağırma ve ulaşım yönetimi uygulaması. GPS takibi ve gerçek zamanlı konum paylaşımı.',
-        'technologies': ['Flutter', 'Google Maps', 'Provider'],
+        'description': 'İstifadəçilərə evlərin sürətli axtarışını, onların satışını və kirayəsini, həmçinin sürətli şəkildə satıcı ilə əlaqə yaratma imkanını təmin edən tətbiqdir.',
+        'technologies': ['Flutter', 'Google Maps', 'Provider', 'REST API'],
         'icon': Icons.local_taxi,
         'image': 'assets/images/bonpini_app.png',
       },
@@ -286,7 +279,7 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
                     ),
                   ),
                   child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 400),
+                    duration: Duration(milliseconds: 400),
                     curve: Curves.easeOutCubic,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -305,7 +298,6 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Project Icon/Image
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 400),
                           curve: Curves.easeOutCubic,

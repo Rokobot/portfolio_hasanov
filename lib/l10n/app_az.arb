@@ -20,7 +20,9 @@
   
   "aboutTitle": "Haqqımda",
   "aboutDescription": "Salam! Mən Əliyəm, Flutter üzrə ixtisaslaşmış təcrübəli proqramçıyam. İstifadəçi mərkəzli mobil tətbiqlərin hazırlanmasına fokuslanıram və daim yeni texnologiyalara uyğunlaşmağa çalışıram. Əməkdaşlığa açığam və yeni layihələrə həmişə müsbət yanaşıram. Səmərəli əməkdaşlıq üçün mənimlə əlaqə saxlaya bilərsiniz.",
-  "aboutEducation": "Azərbaycan Dövlət Neft və Sənaye Universiteti – Mexatronika və Robotika",
+  "educationBachelor": "Azərbaycan Dövlət Neft və Sənaye Universiteti – Mexatronika və Robototexnika (2019–2023) – Bakalavr",
+  "educationMaster": "Azərbaycan Dövlət Neft və Sənaye Universiteti – Robototexnika və Robotlar (2023–2025) – Magistr",
+  "educationPhD": "İnformasiya Elmləri və Texnologiyaları Universiteti (ISTU), Polşa – Süni İntellekt Sistemləri (2025–2029) – PhD",
   "yearsExperience": "İl Təcrübə",
   "projectsBuilt": "Yaradılmış Layihə",
   

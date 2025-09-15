@@ -20,26 +20,23 @@
   "viewProjects": "View Projects",
   "contactMe": "Contact Me",
   "readMediumArticles": "Read My Medium Articles",
-  
   "aboutTitle": "About Me",
   "aboutDescription": "Hello! I'm Ali, an experienced software developer specializing in Flutter development. I focus on developing user-centered mobile applications and i am to constantly adapt to new technologies. I am collaborative and always open to new projects. Feel free to reach out to me for a fruitful collaboration",
-  "aboutEducation": "Azerbaijan State Oil and Industry University – Mechatronics & Robotics",
+  "educationBachelor": "Azerbaijan State Oil and Industry University – Mechatronics & Robotics (2019–2023) – Bachelor’s degree in Mechatronics & Robotics",
+  "educationMaster": "Azerbaijan State Oil and Industry University – Robotics and Robots (2023–2025) – Master’s degree in Robotics and Robots",
+  "educationPhD": "Information Science and Technology University (ISTU), Poland – PhD in Artificial Intelligence Systems (2025–2029)",
   "yearsExperience": "Years Experience",
   "projectsBuilt": "Projects Built",
-  
   "skillsTitle": "My Skills",
   "skillsDescription": "Technologies and tools I work with",
-  
   "projectsTitle": "Featured Projects",
   "projectsDescription": "Some of my notable work",
   "viewProject": "View Project",
   "sourceCode": "Source Code",
   "techStack": "Tech Stack",
-  
   "experienceTitle": "Work Experience",
   "experienceDescription": "My professional journey",
   "present": "Present",
-  
   "githubTitle": "GitHub Profile",
   "githubDescription": "Check out my open source contributions",
   "publicRepos": "Public Repositories",

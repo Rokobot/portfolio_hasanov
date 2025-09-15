@@ -20,7 +20,9 @@
   
   "aboutTitle": "Hakkımda",
   "aboutDescription": "Merhaba! Ben Ali, Flutter geliştirmede uzmanlaşmış deneyimli bir yazılım geliştiricisiyim. Kullanıcı odaklı mobil uygulamalar geliştirmeye odaklanıyorum ve sürekli olarak yeni teknolojilere uyum sağlamaya çalışıyorum. İş birliğine açığım ve her zaman yeni projelere olumlu yaklaşıyorum. Verimli bir iş birliği için benimle iletişime geçmekten çekinmeyin.",
-  "aboutEducation": "Azerbaycan Devlet Petrol ve Sanayi Üniversitesi – Mekatronik ve Robotik",
+  "educationBachelor": "Azerbaycan Devlet Petrol ve Sanayi Üniversitesi – Mekatronik ve Robotik (2019–2023) – Lisans",
+  "educationMaster": "Azerbaycan Devlet Petrol ve Sanayi Üniversitesi – Robotik ve Robotlar (2023–2025) – Yüksek Lisans",
+  "educationPhD": "Bilgi Bilimleri ve Teknolojileri Üniversitesi (ISTU), Polonya – Yapay Zeka Sistemleri (2025–2029) – Doktora",
   "yearsExperience": "Yıl Deneyim",
   "projectsBuilt": "Geliştirilen Proje",
   
