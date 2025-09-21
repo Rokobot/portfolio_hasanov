@@ -16,10 +16,13 @@
   "heroSkill3": "Firebase İnteqrasiyası",
   "viewProjects": "Layihələrə Bax",
   "contactMe": "Mənimlə Əlaqə Saxla",
+  "readMediumArticles": "Medium Məqalələrimi Oxu",
   
   "aboutTitle": "Haqqımda",
-  "aboutDescription": "Yüksək keyfiyyətli cross-platform tətbiqlər yaratmaq sahəsində geniş təcrübəyə malik həvəsli Senior Flutter Developerəm. Zərif istifadəçi interfeyslər və möhkəm backend inteqrasiyaları yaratmaq sahəsində ixtisaslaşmışam.",
-  "aboutEducation": "Azərbaycan Dövlət Neft və Sənaye Universiteti – Mexatronika və Robotika",
+  "aboutDescription": "Salam! Mən Əliyəm, Flutter üzrə ixtisaslaşmış təcrübəli proqramçıyam. İstifadəçi mərkəzli mobil tətbiqlərin hazırlanmasına fokuslanıram və daim yeni texnologiyalara uyğunlaşmağa çalışıram. Əməkdaşlığa açığam və yeni layihələrə həmişə müsbət yanaşıram. Səmərəli əməkdaşlıq üçün mənimlə əlaqə saxlaya bilərsiniz.",
+  "educationBachelor": "Azərbaycan Dövlət Neft və Sənaye Universiteti – Mexatronika və Robototexnika (2019–2023) – Bakalavr",
+  "educationMaster": "Azərbaycan Dövlət Neft və Sənaye Universiteti – Robototexnika və Robotlar (2023–2025) – Magistr",
+  "educationPhD": "İnformasiya Elmləri və Texnologiyaları Universiteti (ISTU), Polşa – Süni İntellekt Sistemləri (2025–2029) – PhD",
   "yearsExperience": "İl Təcrübə",
   "projectsBuilt": "Yaradılmış Layihə",
   
@@ -35,9 +38,8 @@
   "experienceTitle": "İş Təcrübəsi",
   "experienceDescription": "Peşəkar səyahətim",
   "present": "İndi",
-  
   "githubTitle": "GitHub Profili",
-  "githubDescription": "Açıq mənbə töhfələrimə baxın",
+  "githubDescription": "Açıq mənbə kodlarıma baxın",
   "publicRepos": "Açıq Depolar",
   "followers": "İzləyicilər",
   "following": "İzlənilən",
@@ -45,7 +47,6 @@
   "topLanguages": "Ən Çox İstifadə Edilən Dillər",
   "viewOnGithub": "GitHub-da Bax",
   "downloadCV": "CV Endir",
-  
   "contactTitle": "Əlaqə Saxlayın",
   "contactDescription": "Növbəti layihənizdə birlikdə işləyək",
   "yourName": "Adınız",
@@ -86,5 +87,25 @@
   "chatbotSampleQuestions": "Nümunə suallar:",
   
   "securityOverlayTitle": "Təhlükəsizlik səbəbindən bu ekran hazırda göstərilə bilməz. Görmək üçün imleciniz bu səhifədə olmalıdır.",
-  "securityOverlayHint": "Toxunun"
-} 
+  "securityOverlayHint": "Toxunun",
+  "greenPayDescription": "Beynəlxalq ödəniş sistemi",
+  "notifications": "Bildirişlər",
+  "titleNotificationFirst": "Salam!",
+  "messageNotificationFirst": "Bu menim CV-imdir.",
+  "titleNotificationSecond": "Flutter App",
+  "messageNotificationSecond": "Bu sayt Flutter ile yazilidi",
+  "titleNotificationThird": "WhatsApp",
+  "messageNotificationThird": "Bu mənim WhatsApp nömrəmdir (+994509794981), indi mənimlə əlaqə saxlaya bilərsən",
+  "buttonDownloading": "Yüklənir...",
+  "buttonDownload": "Yüklə",
+  "buttonClose": "Bağla",
+  "descriptionOfGreenPay": "GreenPay-də ödəniş sistemləri ilə inteqrasiyaları həyata keçirirəm, o cümlədən mobil tərəfdə ödəniş arxitekturasını dizayn edirəm və inkişaf etmiş Flutter texnologiyalarından istifadə edirəm.",
+
+  "descriptionOfAlfaSoft": "Tanınmış məhsullar üçün Taxo, Yurd, Ruffle və Emiland daxil olmaqla, Flutter istifadə edərək yaxşı strukturlaşdırılmış və miqyaslana bilən cross-platform mobil tətbiqlər hazırladım. Təkmil state management texnikalarından istifadə etdim və Repository pattern və clean architecture prinsiplərini tətbiq edərək arxitektura dizaynında yaxından əməkdaşlıq etdim.",
+
+  "descriptionOfYupTech": "Miannonse, TezYu və Zulamed daxil olmaqla bir neçə mobil layihəyə töhfə verdim. Native Android/iOS-dan Flutter inkişafına keçdim və Zulamed-in tam inkişafını sıfırdan yüksək səviyyəli, gələcəyə davamlı arxitektura ilə həyata keçirdim.",
+
+  "descriptionOfJeySoft": "Flutter mühitində Python istifadə etməmişəm. Üz tanıma sistemləri üçün desktop tətbiqi hazırlamışam və bu prosesdə Flutter-in geniş local storage məntiqindən, o cümlədən SQLite-dan istifadə etmişəm."
+
+
+}

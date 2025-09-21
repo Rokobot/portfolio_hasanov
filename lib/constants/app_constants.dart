@@ -8,18 +8,18 @@ class AppConstants {
   static const String githubUrl = 'https://github.com/$githubUsername';
   static const String linkedinUrl = 'https://linkedin.com/in/alihasanov'; // Replace with actual LinkedIn
   static const String telegramUrl = 'https://t.me/alihasanov'; // Replace with actual Telegram
-  static const String whatsappNumber = '+994501234567'; // Replace with actual WhatsApp
-  static const String email = 'ali.hasanov@email.com'; // Replace with actual email
+  static const String whatsappNumber = '+994509794981'; // Replace with actual WhatsApp
+  static const String email = 'alihasanov2023@email.com'; // Replace with actual email
   
   // Experience
-  static const int yearsOfExperience = 6;
-  static const int totalProjects = 25;
+  static const int yearsOfExperience = 4;
+  static const int totalProjects = 9;
   
   // Assets Paths
-  static const String defaultProfileImage = 'assets/images/default.png';
+  static const String defaultProfileImage = 'assets/images/profile_image.png';
   static const String defaultProjectImage = 'assets/images/default_project.png';
   static const String defaultSkillImage = 'assets/images/default_skill.png';
-  static const String defaultGithubImage = 'assets/images/default_github.png';
+  static const String defaultGithubImage = 'assets/images/profile_image.png';
   
   // Animation Durations
   static const Duration shortAnimation = Duration(milliseconds: 300);

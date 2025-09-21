@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../providers/app_provider.dart';
@@ -42,6 +45,9 @@ class ProjectsSection extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 60),
+
+                  SmoothLedBorderContainer(),
+
                   GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -56,7 +62,7 @@ class ProjectsSection extends StatelessWidget {
                       crossAxisSpacing: 30,
                       childAspectRatio: 0.8,
                     ),
-                    itemCount: 3,
+                    itemCount: 8,
                     itemBuilder: (context, index) => _AnimatedProjectCard(
                       index: index,
                       isDarkMode: appProvider.isDarkMode,
@@ -151,7 +157,7 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
       id: widget.index + 1,
       title: projectData['title'] as String,
       description: projectData['description'] as String,
-      image: 'assets/images/default_project.png',
+      image: projectData['image'] as String? ?? 'assets/images/default_project.png',
       technologies: List<String>.from(projectData['technologies'] as List),
       githubUrl: 'https://github.com/alihasanov/flutter-project-${widget.index + 1}',
       liveUrl: 'https://flutter-project-${widget.index + 1}.web.app',
@@ -191,22 +197,60 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
     final l10n = AppLocalizations.of(context)!;
     final projects = [
       {
-        'title': 'E-Commerce App',
-        'description': 'Full-featured mobile e-commerce application with user authentication, product catalog, and payment integration.',
-        'technologies': ['Flutter', 'Firebase', 'Stripe'],
-        'icon': Icons.shopping_cart,
+        'title': 'Minannonse',
+        'description': 'İnkişaf etmiş elanlar və bildirişlər platformasıdır ki, istifadəçilərə elan yaratmaq, paylaşmaq və idarə etmək imkanı verir. Platforma, elanların axtarışı və təşkilini asanlaşdıraraq rahat və effektiv istifadə təcrübəsi təmin edir.',
+        'technologies': ['Flutter', 'Firebase', 'Cubit', 'REST API'],
+        'icon': Icons.campaign,
+        'image': 'assets/images/minannonse_app.png',
       },
       {
-        'title': 'Task Manager',
-        'description': 'Responsive web dashboard for task management with real-time updates and team collaboration.',
-        'technologies': ['Flutter Web', 'Firebase', 'Bloc'],
-        'icon': Icons.task_alt,
+        'title': 'TezYu',
+        'description': 'Tezyu tətbiqi, maşınlara ən yaxın yuma mərkəzlərini tapmaq üçün hazırlanmışdır. İstifadəçilərə sürətli və rahat xidmət göstərərək vaxt və səy qənaəti təmin edir.',
+        'technologies': ['Flutter', 'REST API', 'Provider', 'Rive', 'Hive'],
+        'icon': Icons.school,
+        'image': 'assets/images/tezyu_app.png',
       },
       {
-        'title': 'Weather App',
-        'description': 'Beautiful weather application with location-based forecasts and interactive maps.',
-        'technologies': ['Flutter', 'REST API', 'Provider'],
-        'icon': Icons.wb_sunny,
+        'title': 'NextGeneration',
+        'description': 'Kurs məlumatlarını, dərs proqramlarını və müəllim detallarını istifadəçilərə rahat və interaktiv şəkildə təqdim edən innovativ platformadır.',
+        'technologies': ['Flutter', 'Provider', 'Rive', 'Hive', 'Firebase'],
+        'icon': Icons.rocket_launch,
+        'image': 'assets/images/next_generation_app.png',
+      },
+      {
+        'title': 'Zulamed',
+        'description': 'Sağlıq sektoruna yönəlik rəqəmsal platforma xəstə takibi və randevu idarəetməsini asanlaşdırır. AI dəstəkli chat sistemi isə pasiyentlərə və həkimlərə 24/7 dəstək göstərir..',
+        'technologies': ['Flutter', 'Firebase', 'Provider', 'Future Architecture', 'REST API'],
+        'icon': Icons.medical_services,
+        'image': 'assets/images/zulamed_app.png',
+      },
+      {
+        'title': 'Emiland',
+        'description': 'Azərbaycanın ən böyük geyim şirkəti olan Emiland üçün daxili tətbiqlər hazırlanmışdır. Bu tətbiqlər Flutter ilə ən yüksək səviyyədə işlənib və istifadəçilərə smooth interfeys təqdim edir.',
+        'technologies':['Flutter', 'Firebase', 'Provider'],
+        'icon': Icons.home_work,
+        'image': 'assets/images/emiland_app.png',
+      },
+      {
+        'title': 'Superfon',
+        'description': 'Bu tətbiq Superfonun daxili sistemi olaraq hazırlanmışdır və şirkətin maliyyə əməliyyatlarının idarə olunmasını tamamilə mərkəzləşdirilmiş şəkildə həyata keçirir. Burada istifadəçilər ödənişləri izləyə, xərcləri və gəlirləri təhlil edə, həmçinin maliyyə hesabatlarını asanlıqla əldə edə bilirlər.',
+        'technologies': ['Flutter', 'Firebase', 'Provider', 'REST API'],
+        'icon': Icons.phone_in_talk,
+        'image': 'assets/images/superfon_app.png',
+      },
+      {
+        'title': 'Yurd',
+        'description': 'Yurd tətbiqi istifadəçilərə müxtəlif kampaniyalar təqdim edir və telefon və digər cihaz aksesuarlarının satışını həyata keçirir. Burada həmçinin müxtəlif növ bonus və hədiyyə kampaniyaları mövcuddur.',
+        'technologies': ['Flutter', 'Firebase', 'Provider', 'REST API'],
+        'icon': Icons.apartment,
+        'image': 'assets/images/yurd_app.png',
+      },
+      {
+        'title': 'Bonpini',
+        'description': 'İstifadəçilərə evlərin sürətli axtarışını, onların satışını və kirayəsini, həmçinin sürətli şəkildə satıcı ilə əlaqə yaratma imkanını təmin edən tətbiqdir.',
+        'technologies': ['Flutter', 'Google Maps', 'Provider', 'REST API'],
+        'icon': Icons.local_taxi,
+        'image': 'assets/images/bonpini_app.png',
       },
     ];
 
@@ -241,7 +285,7 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
                     ),
                   ),
                   child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 400),
+                    duration: Duration(milliseconds: 400),
                     curve: Curves.easeOutCubic,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -260,7 +304,6 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Project Icon/Image
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 400),
                           curve: Curves.easeOutCubic,
@@ -284,24 +327,55 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
                               ),
                             ] : null,
                           ),
-                          child: Center(
-                            child: TweenAnimationBuilder<double>(
-                              duration: const Duration(milliseconds: 400),
-                              tween: Tween<double>(
-                                begin: 0.0,
-                                end: _isHovered ? 1.0 : 0.0,
-                              ),
-                              builder: (context, value, child) {
-                                return Transform.scale(
-                                  scale: 1.0 + (value * 0.2),
-                                  child: Icon(
-                                    project['icon'] as IconData,
-                                    size: 60 + (value * 12),
-                                    color: AppTheme.primaryColor,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(14),
+                            child: project['image'] != null
+                                ? Image.asset(
+                                    project['image'] as String,
+                                    fit: BoxFit.cover,
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Center(
+                                        child: TweenAnimationBuilder<double>(
+                                          duration: const Duration(milliseconds: 400),
+                                          tween: Tween<double>(
+                                            begin: 0.0,
+                                            end: _isHovered ? 1.0 : 0.0,
+                                          ),
+                                          builder: (context, value, child) {
+                                            return Transform.scale(
+                                              scale: 1.0 + (value * 0.2),
+                                              child: Icon(
+                                                project['icon'] as IconData,
+                                                size: 60 + (value * 12),
+                                                color: AppTheme.primaryColor,
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      );
+                                    },
+                                  )
+                                : Center(
+                                    child: TweenAnimationBuilder<double>(
+                                      duration: const Duration(milliseconds: 400),
+                                      tween: Tween<double>(
+                                        begin: 0.0,
+                                        end: _isHovered ? 1.0 : 0.0,
+                                      ),
+                                      builder: (context, value, child) {
+                                        return Transform.scale(
+                                          scale: 1.0 + (value * 0.2),
+                                          child: Icon(
+                                            project['icon'] as IconData,
+                                            size: 60 + (value * 12),
+                                            color: AppTheme.primaryColor,
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   ),
-                                );
-                              },
-                            ),
                           ),
                         ),
                         const SizedBox(height: 20),
@@ -438,4 +512,144 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
       ),
     );
   }
-} 
+}
+
+
+class SmoothLedBorderContainer extends StatefulWidget {
+  const SmoothLedBorderContainer({super.key});
+
+  @override
+  State<SmoothLedBorderContainer> createState() => _SmoothLedBorderContainerState();
+}
+
+class _SmoothLedBorderContainerState extends State<SmoothLedBorderContainer>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  bool _hovered = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _onHoverChange(bool hovered) {
+    setState(() {
+      _hovered = hovered;
+      if (hovered) {
+        // Speed up by reducing duration
+        _controller.duration = const Duration(seconds: 1); // faster
+        _controller.repeat();
+      } else {
+        // Restore normal speed
+        _controller.duration = const Duration(seconds: 3);
+        _controller.repeat();
+      }
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => _onHoverChange(true),
+      onExit: (_) => _onHoverChange(false),
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return Consumer<AppProvider>(
+            builder: (BuildContext context, appProvider, Widget? child) {
+              return Container(
+                margin: EdgeInsets.only(bottom: 60),
+                child: CustomPaint(
+                  painter: _SmoothRectLedPainter(rotation: _controller.value),
+                  child: Container(
+
+                    margin: EdgeInsets.all(10),
+                    width: double.infinity,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: appProvider.isDarkMode ?AppTheme.cardColorDark  : AppTheme.backgroundColorLight,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    alignment: Alignment.center,
+                    child:  SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 70,
+                            width: 120,
+                            child: Image.asset("assets/images/greenpay_logo.png"),
+                          ),
+                          Text(
+                            AppLocalizations.of(context).greenPayDescription,
+                            style: GoogleFonts.poppins(color:appProvider.isDarkMode ?  AppTheme.cardColorLight :  AppTheme.surfaceColorDark),
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _SmoothRectLedPainter extends CustomPainter {
+  final double rotation;
+
+  _SmoothRectLedPainter({required this.rotation});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final borderRadius = 16.0;
+
+    final rrect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      Radius.circular(borderRadius),
+    );
+
+    final path = Path()..addRRect(rrect);
+
+    final pathMetric = path.computeMetrics().first;
+    final paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 10
+      ..shader = SweepGradient(
+        startAngle: 0,
+        endAngle: 2 * pi,
+        colors: [
+          AppTheme.primaryColor.withOpacity(0.0),
+          AppTheme.secondaryColor.withOpacity(0.5),
+          AppTheme.primaryColor,
+          AppTheme.textPrimaryColorDark.withOpacity(0.5),
+          AppTheme.primaryColor.withOpacity(0.0),
+        ],
+        stops: [0.0, 0.2, 0.5, 0.8, 1.0],
+        transform: GradientRotation(2 * pi * rotation),
+      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _SmoothRectLedPainter oldDelegate) =>
+      oldDelegate.rotation != rotation;
+}

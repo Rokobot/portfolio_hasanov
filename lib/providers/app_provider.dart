@@ -93,34 +93,66 @@ class AppProvider extends ChangeNotifier {
       return;
     }
 
-    // Dinamik section pozisyonları (viewport height'e göre)
-    final viewportHeight = scrollController.position.viewportDimension;
-    final sectionHeight = viewportHeight * 0.8; // Her section yaklaşık ekranın %80'i
-    
-    final sectionPositions = [
-      0.0,                           // Home
-      sectionHeight * 1,             // About
-      sectionHeight * 2,             // Skills  
-      sectionHeight * 3,             // Projects
-      sectionHeight * 4,             // Experience
-      sectionHeight * 5,             // GitHub
-      sectionHeight * 6,             // Contact
+    // Section key'lerinin listesi
+    final sectionKeys = [
+      homeKey,        // 0 - Home
+      aboutKey,       // 1 - About
+      skillsKey,      // 2 - Skills  
+      projectsKey,    // 3 - Projects
+      experienceKey,  // 4 - Experience
+      githubKey,      // 5 - GitHub
+      contactKey,     // 6 - Contact
     ];
 
-    if (index < sectionPositions.length) {
-      final targetPosition = sectionPositions[index];
-      final maxScroll = scrollController.position.maxScrollExtent;
+    if (index < sectionKeys.length) {
+      final targetKey = sectionKeys[index];
       
-      // Hedef pozisyonu maksimum scroll'a sınırla
-      final adjustedPosition = targetPosition > maxScroll ? maxScroll : targetPosition;
-      
-      debugPrint('Navigating to section $index, position: $adjustedPosition');
-      
-      scrollController.animateTo(
-        adjustedPosition,
-        duration: const Duration(milliseconds: 1200),
-        curve: Curves.fastOutSlowIn,
-      );
+      // Key'in context'ini al
+      final context = targetKey.currentContext;
+      if (context != null) {
+        // Widget'ın pozisyonunu al
+        final RenderBox renderBox = context.findRenderObject() as RenderBox;
+        final position = renderBox.localToGlobal(Offset.zero);
+        
+        // Navigation bar yüksekliğini düş (80px)
+        final targetPosition = position.dy - 80;
+        final maxScroll = scrollController.position.maxScrollExtent;
+        
+        // Hedef pozisyonu maksimum scroll'a sınırla
+        final adjustedPosition = targetPosition > maxScroll ? maxScroll : targetPosition.clamp(0.0, maxScroll);
+        
+        debugPrint('Navigating to section $index, position: $adjustedPosition');
+        
+        scrollController.animateTo(
+          adjustedPosition,
+          duration: const Duration(milliseconds: 1200),
+          curve: Curves.fastOutSlowIn,
+        );
+      } else {
+        // Fallback: eski sistem ile
+        final viewportHeight = scrollController.position.viewportDimension;
+        final sectionHeight = viewportHeight * 0.9;
+        
+        final sectionPositions = [
+          0.0,                           // Home
+          sectionHeight * 0.8,           // About
+          sectionHeight * 1.6,           // Skills  
+          sectionHeight * 2.4,           // Projects
+          sectionHeight * 3.2,           // Experience
+          sectionHeight * 4.0,           // GitHub
+          sectionHeight * 4.8,           // Contact
+        ];
+        
+        final targetPosition = sectionPositions[index];
+        final maxScroll = scrollController.position.maxScrollExtent;
+        final adjustedPosition = targetPosition > maxScroll ? maxScroll : targetPosition;
+        
+        scrollController.animateTo(
+          adjustedPosition,
+          duration: const Duration(milliseconds: 1200),
+          curve: Curves.fastOutSlowIn,
+        );
+      }
     }
   }
 

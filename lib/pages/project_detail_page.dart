@@ -267,7 +267,6 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Title
         TweenAnimationBuilder<double>(
           duration: const Duration(milliseconds: 800),
           tween: Tween<double>(begin: 0.0, end: 1.0),
@@ -284,8 +283,6 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
           },
         ),
         const SizedBox(height: 16),
-        
-        // Description
         TweenAnimationBuilder<double>(
           duration: const Duration(milliseconds: 1000),
           tween: Tween<double>(begin: 0.0, end: 1.0),
@@ -302,8 +299,6 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
           },
         ),
         const SizedBox(height: 32),
-        
-        // Tech Stack
         _buildTechStack(isDarkMode, project),
         const SizedBox(height: 32),
         

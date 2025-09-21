@@ -42,7 +42,7 @@ class ExperienceSection extends StatelessWidget {
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 3,
+                    itemCount: 4,
                     itemBuilder: (context, index) => _AnimatedExperienceCard(
                       index: index,
                       isDarkMode: appProvider.isDarkMode,
@@ -133,45 +133,41 @@ class _AnimatedExperienceCardState extends State<_AnimatedExperienceCard>
 
   @override
   Widget build(BuildContext context) {
+
+    var l10n = AppLocalizations.of(context);
+
     final experiences = [
       {
-        'title': 'Senior Flutter Developer',
-        'company': 'Tech Innovation Co.',
-        'period': '2022 - Present',
-        'description': 'Leading mobile app development team, architecting scalable Flutter applications, and mentoring junior developers.',
-        'achievements': [
-          'Led development of 5+ mobile applications',
-          'Implemented CI/CD pipelines reducing deployment time by 40%',
-          'Mentored 3 junior developers'
-        ],
-        'icon': Icons.code,
+        'title': 'Middle Flutter Developer',
+        'company': 'GreenPay',
+        'period': '2023 - ${l10n.present}',
+        'description': l10n.descriptionOfGreenPay,
+        'icon': Icons.computer_rounded,
         'color': const Color(0xFF4CAF50),
       },
       {
-        'title': 'Flutter Developer',
-        'company': 'Digital Solutions Ltd.',
-        'period': '2020 - 2022',
-        'description': 'Developed cross-platform mobile applications using Flutter and integrated various APIs and services.',
-        'achievements': [
-          'Built 10+ mobile applications',
-          'Integrated payment gateways and analytics',
-          'Improved app performance by 30%'
-        ],
-        'icon': Icons.mobile_friendly,
+        'title': 'Middle Flutter Developer',
+        'company': 'Alfa Soft',
+        'period': '2022 - 2023',
+        'description': l10n.descriptionOfAlfaSoft,
+        'icon': Icons.computer_rounded,
         'color': const Color(0xFF2196F3),
       },
       {
-        'title': 'Mobile App Developer',
-        'company': 'StartUp Ventures',
-        'period': '2018 - 2020',
-        'description': 'Started career in mobile development, worked on native Android and iOS before transitioning to Flutter.',
-        'achievements': [
-          'Developed 5+ native mobile apps',
-          'Learned Flutter and Dart',
-          'Contributed to open source projects'
-        ],
-        'icon': Icons.phone_android,
+        'title': 'Flutter Developer (Remote)',
+        'company': 'Yup Tech',
+        'period': '2022 - 2023',
+        'description': l10n.descriptionOfYupTech,
+        'icon': Icons.computer_rounded,
         'color': const Color(0xFFFF9800),
+      },
+      {
+        'title': 'Flutter Developer',
+        'company': 'Jey Soft',
+        'period': '2021 - 2022',
+        'description': l10n.descriptionOfJeySoft,
+        'icon': Icons.computer_rounded,
+        'color': const Color(0xFFFF00EA),
       },
     ];
 
@@ -340,7 +336,7 @@ class _AnimatedExperienceCardState extends State<_AnimatedExperienceCard>
                             ),
                             const SizedBox(height: 20),
                             
-                            // Achievements
+                          /*  // Achievements
                             AnimatedDefaultTextStyle(
                               duration: const Duration(milliseconds: 400),
                               curve: Curves.easeOutCubic,
@@ -406,7 +402,7 @@ class _AnimatedExperienceCardState extends State<_AnimatedExperienceCard>
                                   );
                                 },
                               );
-                            })).toList(),
+                            })).toList(),*/
                           ],
                         ),
                       ),

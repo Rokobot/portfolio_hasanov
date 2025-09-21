@@ -56,6 +56,9 @@ dependencies:
   
   # Responsive
   responsive_framework: ^1.1.1
+  audioplayers: ^6.5.1
+  mailer: ^6.5.0
+  email_sender: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -117,5 +120,6 @@ flutter:
     - assets/icons/
     - assets/animations/
     - assets/data/
+    - assets/sounds/notification_sound.wav
 
 

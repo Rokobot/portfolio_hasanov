@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_ali/utils/notification_button.dart';
 import 'package:provider/provider.dart';
 import 'dart:ui';
 import '../providers/app_provider.dart';
@@ -133,6 +134,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         // Language & Theme Toggles
         Row(
           children: [
+            SizedBox(
+                height: 50,
+                width: 50,
+                child: NotificationDemo()),
+            const SizedBox(width: 16),
             _buildLanguageDropdown(context, appProvider),
             const SizedBox(width: 16),
             _buildThemeToggle(context, appProvider),
@@ -217,6 +223,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         value: appProvider.currentLocale,
         dropdownColor: AppTheme.getSurfaceColor(appProvider.isDarkMode),
         underline: const SizedBox(),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         icon: Icon(Icons.language, color: AppTheme.getTextSecondaryColor(appProvider.isDarkMode)),
         items: appProvider.availableLocales.entries.map((entry) {
           return DropdownMenuItem<Locale>(
@@ -279,6 +286,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       ),
     );
   }
+
 
   void _showMobileMenu(BuildContext context, AppProvider appProvider) {
     final l10n = AppLocalizations.of(context)!;

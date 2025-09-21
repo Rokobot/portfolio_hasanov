@@ -1,3 +1,4 @@
+import 'package:email_sender/email_sender.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -6,7 +7,11 @@ import '../utils/app_theme.dart';
 import '../utils/responsive_helper.dart';
 import '../constants/app_constants.dart';
 import '../services/contact_service.dart';
-
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server.dart';
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server.dart';
+import 'package:flutter/material.dart';
 class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
 
@@ -16,9 +21,9 @@ class ContactSection extends StatefulWidget {
 
 class _ContactSectionState extends State<ContactSection> {
   final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController();
-  final _emailController = TextEditingController();
-  final _messageController = TextEditingController();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final messageController = TextEditingController();
   
   bool _isFormValid = false;
   bool _isLoading = false;
@@ -27,23 +32,23 @@ class _ContactSectionState extends State<ContactSection> {
   void initState() {
     super.initState();
     // Form alanlarını dinle
-    _nameController.addListener(_validateForm);
-    _emailController.addListener(_validateForm);
-    _messageController.addListener(_validateForm);
+    nameController.addListener(_validateForm);
+    emailController.addListener(_validateForm);
+    messageController.addListener(_validateForm);
   }
 
   @override
   void dispose() {
-    _nameController.dispose();
-    _emailController.dispose();
-    _messageController.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    messageController.dispose();
     super.dispose();
   }
 
   void _validateForm() {
-    final name = _nameController.text.trim();
-    final email = _emailController.text.trim();
-    final message = _messageController.text.trim();
+    final name = nameController.text.trim();
+    final email = emailController.text.trim();
+    final message = messageController.text.trim();
     
     final isValid = name.isNotEmpty && 
                    email.isNotEmpty && 
@@ -57,37 +62,50 @@ class _ContactSectionState extends State<ContactSection> {
     }
   }
 
-  Future<void> _sendMessage() async {
-    if (!_isFormValid || _isLoading) return;
-    
-    setState(() {
-      _isLoading = true;
-    });
-    
+
+
+
+
+  Future<void> sendEmail({
+    required TextEditingController nameController,
+    required TextEditingController emailController,
+    required TextEditingController messageController,
+    required BuildContext context,
+  }) async {
+    Email emailsender = Email( );
+
+
+
+    String username = 'nextnexttime451@gmail.com';
+    String password = 'hasanovpassword@'; // Gmail App Password istifadə edin
+
+    final smtpServer = gmail(username, password);
+
+    final message = Message()
+      ..from = Address(username, nameController.text)
+      ..recipients.add('alihasanov2023@gmail.com') // öz inboxunuz
+      ..subject = '${emailController.text} - dan sənə bir email var'
+      ..text = messageController.text;
+
     try {
-      final result = await ContactService().submitContactForm(
-        name: _nameController.text.trim(),
-        email: _emailController.text.trim(),
-        message: _messageController.text.trim(),
-      );
-      
-      if (mounted) {
+      final sendReport = await send(message, smtpServer);
+      print('Message sent: ' + sendReport.toString());
+
+      if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(result.message),
-            backgroundColor: result.success ? Colors.green : Colors.red,
+          const SnackBar(
+            content: Text('Email uğurla göndərildi!'),
+            backgroundColor: Colors.green,
           ),
         );
-        
-        if (result.success) {
-          // Form'u temizle
-          _nameController.clear();
-          _emailController.clear();
-          _messageController.clear();
-        }
+
+        nameController.clear();
+        emailController.clear();
+        messageController.clear();
       }
-    } catch (e) {
-      if (mounted) {
+    } on MailerException catch (e) {
+      print('Message not sent. \n' + e.toString());
+      if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Hata: ${e.toString()}'),
@@ -95,14 +113,10 @@ class _ContactSectionState extends State<ContactSection> {
           ),
         );
       }
-    } finally {
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-      }
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -195,7 +209,7 @@ class _ContactSectionState extends State<ContactSection> {
               ),
               const SizedBox(height: 32),
               TextFormField(
-                controller: _nameController,
+                controller: nameController,
                 decoration: InputDecoration(
                   labelText: l10n.yourName,
                   labelStyle: AppTheme.getBodyMedium(appProvider.isDarkMode),
@@ -222,7 +236,7 @@ class _ContactSectionState extends State<ContactSection> {
               ),
               const SizedBox(height: 20),
               TextFormField(
-                controller: _emailController,
+                controller: emailController,
                 decoration: InputDecoration(
                   labelText: l10n.yourEmail,
                   labelStyle: AppTheme.getBodyMedium(appProvider.isDarkMode),
@@ -252,7 +266,7 @@ class _ContactSectionState extends State<ContactSection> {
               ),
               const SizedBox(height: 20),
               TextFormField(
-                controller: _messageController,
+                controller: messageController,
                 maxLines: 5,
                 decoration: InputDecoration(
                   labelText: l10n.yourMessage,
@@ -283,8 +297,16 @@ class _ContactSectionState extends State<ContactSection> {
               ),
               const SizedBox(height: 32),
               ElevatedButton(
-                onPressed: _isFormValid && !_isLoading ? _sendMessage : null,
-                style: ElevatedButton.styleFrom(
+                onPressed: _isFormValid && !_isLoading
+                    ? () {
+                  sendEmail(
+                    context: context,
+                    nameController: nameController,
+                    emailController: emailController,
+                    messageController: messageController,
+                  );
+                }
+                    : null,                style: ElevatedButton.styleFrom(
                   backgroundColor: _isFormValid 
                       ? AppTheme.primaryColor 
                       : AppTheme.getTextSecondaryColor(appProvider.isDarkMode).withOpacity(0.3),
@@ -340,7 +362,7 @@ class _ContactSectionState extends State<ContactSection> {
             child: Column(
               children: [
                 Text(
-                  'Get in Touch',
+                  AppLocalizations.of(context).contactTitle,
                   style: AppTheme.getHeadingSmall(appProvider.isDarkMode),
                   textAlign: TextAlign.center,
                 ),
@@ -372,8 +394,8 @@ class _ContactSectionState extends State<ContactSection> {
             ),
           ),
         ),
-        const SizedBox(height: 24),
-        Row(
+
+/*  const SizedBox(height: 24),      Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _buildSocialButton(context, Icons.telegram, appProvider.isDarkMode, () async {
@@ -393,10 +415,36 @@ class _ContactSectionState extends State<ContactSection> {
               await ContactService().openLinkedIn();
             }),
           ],
-        ),
+        ),*/
       ],
     );
   }
+
+
+
+
+/*
+  void sendEmail() async {
+    String username = 'nextnexttime451@gmail.com';
+    String password = 'hasanovpassword@';
+
+    final smtpServer = gmail(username, password);
+
+    final message = Message()
+      ..from = Address(username, nameController.text)
+      ..recipients.add('alihasanov2023@gmail.com')
+      ..subject = '${emailController.text} - dan sənə bir email var'
+      ..text = messageController.text.toString();
+
+    try {
+      final sendReport = await send(message, smtpServer);
+      print('Message sent: ' + sendReport.toString());
+    } on MailerException catch (e) {
+      print('Message not sent. \n' + e.toString());
+    }
+  }
+*/
+
 
   Widget _buildContactItem(BuildContext context, IconData icon, String label, String value, bool isDarkMode) {
     return Row(
