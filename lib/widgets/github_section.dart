@@ -392,13 +392,14 @@ class _AnimatedProfileCardState extends State<_AnimatedProfileCard>
                         const SizedBox(height: 16),
                         
                         // Description
-                        Text(
+                       /* Text(
                           "Senior Flutter Developer with extensive experience in building high-quality cross-platform applications.",
                           style: AppTheme.getBodySmall(widget.isDarkMode).copyWith(
                             height: 1.5,
                           ),
                           textAlign: TextAlign.center,
                         ),
+                     */
                         const SizedBox(height: 24),
                         
                         // GitHub Button
@@ -573,11 +574,11 @@ class _AnimatedStatsCardState extends State<_AnimatedStatsCard>
                       const SizedBox(height: 24),
                       
                       // Stats
-                      _buildAnimatedStatRow(widget.l10n.publicRepos, "25", 0, widget.isDarkMode),
+                      _buildAnimatedStatRow(widget.l10n.publicRepos, "15+", 0, widget.isDarkMode),
                       const SizedBox(height: 16),
-                      _buildAnimatedStatRow(widget.l10n.followers, "150", 200, widget.isDarkMode),
+                      _buildAnimatedStatRow(widget.l10n.followers, "3", 200, widget.isDarkMode),
                       const SizedBox(height: 16),
-                      _buildAnimatedStatRow(widget.l10n.following, "100", 400, widget.isDarkMode),
+                      _buildAnimatedStatRow(widget.l10n.following, "2", 400, widget.isDarkMode),
                       const SizedBox(height: 24),
                       
                       // Languages Title
@@ -601,7 +602,7 @@ class _AnimatedStatsCardState extends State<_AnimatedStatsCard>
                         children: [
                           _buildAnimatedLanguageChip("Dart", 600, widget.isDarkMode),
                           _buildAnimatedLanguageChip("Flutter", 700, widget.isDarkMode),
-                          _buildAnimatedLanguageChip("JavaScript", 800, widget.isDarkMode),
+                          _buildAnimatedLanguageChip("PyQt5", 800, widget.isDarkMode),
                           _buildAnimatedLanguageChip("Python", 900, widget.isDarkMode),
                         ],
                       ),

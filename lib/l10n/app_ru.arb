@@ -87,7 +87,28 @@
   "chatbotTyping": "Печатает...",
   "chatbotPlaceholder": "Введите ваше сообщение...",
   "chatbotSampleQuestions": "Примеры вопросов:",
-  
   "securityOverlayTitle": "По соображениям безопасности экран скрыт. Чтобы просмотреть, верните курсор на страницу.",
-  "securityOverlayHint": "Нажмите"
+  "securityOverlayHint": "Нажмите",
+  "greenPayDescription": "Международная платежная система",
+  "notifications": "Уведомления",
+  "buttonDownloading": "Загрузка...",
+  "buttonDownload": "Скачать",
+  "buttonClose": "Закрыть",
+  "titleNotificationFirst": "Привет!",
+  "messageNotificationFirst": "Это мое резюме.",
+
+  "titleNotificationSecond": "Flutter App",
+  "messageNotificationSecond": "Этот сайт написан на Flutter",
+
+  "titleNotificationThird": "WhatsApp",
+  "messageNotificationThird":"Это мой номер WhatsApp (+994509794981), вы можете связаться со мной прямо сейчас",
+  "descriptionOfGreenPay": "В GreenPay я реализую интеграции с платежными системами, включая проектирование архитектуры платежей на мобильной стороне, и использую современные технологии Flutter.",
+
+  "descriptionOfAlfaSoft": "Разработал хорошо структурированные и масштабируемые кроссплатформенные мобильные приложения с использованием Flutter для известных продуктов, таких как Taxo, Yurd, Ruffle и Emiland. Применял передовые техники управления состоянием и тесно сотрудничал при проектировании архитектуры, используя паттерн Repository и принципы чистой архитектуры.",
+
+  "descriptionOfYupTech": "Внес вклад в несколько мобильных проектов, включая Miannonse, TezYu и Zulamed. Перешел с нативной разработки Android/iOS на Flutter и полностью разработал Zulamed с нуля, используя высокоуровневую, перспективную архитектуру.",
+
+  "descriptionOfJeySoft": "Я не использовал Python в среде Flutter. Разработал десктопное приложение для систем распознавания лиц, и в этом процессе использовал обширную логику локального хранения Flutter, включая SQLite."
+
+
 } 

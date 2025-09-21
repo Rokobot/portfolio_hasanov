@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../providers/app_provider.dart';
@@ -42,6 +45,9 @@ class ProjectsSection extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 60),
+
+                  SmoothLedBorderContainer(),
+
                   GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -506,4 +512,144 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
       ),
     );
   }
-} 
+}
+
+
+class SmoothLedBorderContainer extends StatefulWidget {
+  const SmoothLedBorderContainer({super.key});
+
+  @override
+  State<SmoothLedBorderContainer> createState() => _SmoothLedBorderContainerState();
+}
+
+class _SmoothLedBorderContainerState extends State<SmoothLedBorderContainer>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  bool _hovered = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _onHoverChange(bool hovered) {
+    setState(() {
+      _hovered = hovered;
+      if (hovered) {
+        // Speed up by reducing duration
+        _controller.duration = const Duration(seconds: 1); // faster
+        _controller.repeat();
+      } else {
+        // Restore normal speed
+        _controller.duration = const Duration(seconds: 3);
+        _controller.repeat();
+      }
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => _onHoverChange(true),
+      onExit: (_) => _onHoverChange(false),
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return Consumer<AppProvider>(
+            builder: (BuildContext context, appProvider, Widget? child) {
+              return Container(
+                margin: EdgeInsets.only(bottom: 60),
+                child: CustomPaint(
+                  painter: _SmoothRectLedPainter(rotation: _controller.value),
+                  child: Container(
+
+                    margin: EdgeInsets.all(10),
+                    width: double.infinity,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: appProvider.isDarkMode ?AppTheme.cardColorDark  : AppTheme.backgroundColorLight,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    alignment: Alignment.center,
+                    child:  SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 70,
+                            width: 120,
+                            child: Image.asset("assets/images/greenpay_logo.png"),
+                          ),
+                          Text(
+                            AppLocalizations.of(context).greenPayDescription,
+                            style: GoogleFonts.poppins(color:appProvider.isDarkMode ?  AppTheme.cardColorLight :  AppTheme.surfaceColorDark),
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _SmoothRectLedPainter extends CustomPainter {
+  final double rotation;
+
+  _SmoothRectLedPainter({required this.rotation});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final borderRadius = 16.0;
+
+    final rrect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      Radius.circular(borderRadius),
+    );
+
+    final path = Path()..addRRect(rrect);
+
+    final pathMetric = path.computeMetrics().first;
+    final paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 10
+      ..shader = SweepGradient(
+        startAngle: 0,
+        endAngle: 2 * pi,
+        colors: [
+          AppTheme.primaryColor.withOpacity(0.0),
+          AppTheme.secondaryColor.withOpacity(0.5),
+          AppTheme.primaryColor,
+          AppTheme.textPrimaryColorDark.withOpacity(0.5),
+          AppTheme.primaryColor.withOpacity(0.0),
+        ],
+        stops: [0.0, 0.2, 0.5, 0.8, 1.0],
+        transform: GradientRotation(2 * pi * rotation),
+      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _SmoothRectLedPainter oldDelegate) =>
+      oldDelegate.rotation != rotation;
+}

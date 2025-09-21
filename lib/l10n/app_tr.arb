@@ -8,7 +8,6 @@
   "experience": "Deneyim",
   "contact": "İletişim",
   "github": "GitHub",
-  
   "heroGreeting": "Merhaba, Ben Ali 👋",
   "heroDescription": "Cross-platform uygulamalar geliştiriyorum",
   "heroSkill1": "Temiz UI",
@@ -17,7 +16,6 @@
   "viewProjects": "Projeleri Görüntüle",
   "contactMe": "Benimle İletişime Geç",
   "readMediumArticles": "Medium Makalelerimi Oku",
-  
   "aboutTitle": "Hakkımda",
   "aboutDescription": "Merhaba! Ben Ali, Flutter geliştirmede uzmanlaşmış deneyimli bir yazılım geliştiricisiyim. Kullanıcı odaklı mobil uygulamalar geliştirmeye odaklanıyorum ve sürekli olarak yeni teknolojilere uyum sağlamaya çalışıyorum. İş birliğine açığım ve her zaman yeni projelere olumlu yaklaşıyorum. Verimli bir iş birliği için benimle iletişime geçmekten çekinmeyin.",
   "educationBachelor": "Azerbaycan Devlet Petrol ve Sanayi Üniversitesi – Mekatronik ve Robotik (2019–2023) – Lisans",
@@ -25,20 +23,16 @@
   "educationPhD": "Bilgi Bilimleri ve Teknolojileri Üniversitesi (ISTU), Polonya – Yapay Zeka Sistemleri (2025–2029) – Doktora",
   "yearsExperience": "Yıl Deneyim",
   "projectsBuilt": "Geliştirilen Proje",
-  
   "skillsTitle": "Yeteneklerim",
   "skillsDescription": "Çalıştığım teknolojiler ve araçlar",
-  
   "projectsTitle": "Öne Çıkan Projeler",
   "projectsDescription": "Dikkat çeken çalışmalarımdan bazıları",
   "viewProject": "Projeyi Görüntüle",
   "sourceCode": "Kaynak Kod",
   "techStack": "Teknoloji Yığını",
-  
   "experienceTitle": "İş Deneyimi",
   "experienceDescription": "Profesyonel yolculuğum",
   "present": "Şimdi",
-  
   "githubTitle": "GitHub Profili",
   "githubDescription": "Açık kaynak katkılarımı inceleyin",
   "publicRepos": "Genel Depolar",
@@ -48,7 +42,6 @@
   "topLanguages": "En Çok Kullanılan Diller",
   "viewOnGithub": "GitHub'da Görüntüle",
   "downloadCV": "CV İndir",
-  
   "contactTitle": "İletişime Geçin",
   "contactDescription": "Bir sonraki projenizde birlikte çalışalım",
   "yourName": "Adınız",
@@ -57,19 +50,15 @@
   "sendMessage": "Mesaj Gönder",
   "messageSent": "Mesaj başarıyla gönderildi!",
   "messageError": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
-  
   "telegramContact": "Telegram ile İletişim",
   "whatsappContact": "WhatsApp ile İletişim",
   "emailContact": "E-posta Gönder",
-  
   "copyright": "© 2024 Ali Hasanov. Tüm hakları saklıdır.",
   "madeWith": "Flutter Web ile yapıldı",
-  
   "loading": "Yükleniyor...",
   "error": "Hata oluştu",
   "retry": "Tekrar Dene",
   "close": "Kapat",
-  
   "chatbotWelcome": "Merhaba! Ben Ali Hasanov'un portfolio ChatBot'uyum. Size nasıl yardımcı olabilirim? 😊",
   "chatbotGreeting": "Merhaba! Ben Ali Hasanov'un portfolio ChatBot'uyum. Size nasıl yardımcı olabilirim?",
   "chatbotIntroduction": "Ben Ali Hasanov, Senior Flutter Geliştirici. 5+ yıl deneyimim var ve mobil uygulama geliştirmede uzmanım.",
@@ -87,7 +76,31 @@
   "chatbotTyping": "Yazıyor...",
   "chatbotPlaceholder": "Mesajınızı yazın...",
   "chatbotSampleQuestions": "Örnek sorular:",
-  
   "securityOverlayTitle": "Güvenlik nedeniyle ekran şu anda görüntülenemez. Görmek için imleciniz bu sayfada olmalı.",
-  "securityOverlayHint": "Tıklayın"
+  "securityOverlayHint": "Tıklayın",
+  "greenPayDescription": "Uluslararası ödeme sistemi",
+  "notifications": "Bildirimler",
+
+  "titleNotificationFirst": "Merhaba!",
+  "messageNotificationFirst": "Bu benim CV'imdir.",
+
+
+  "titleNotificationSecond": "Flutter Uygulaması",
+  "messageNotificationSecond": "Bu site Flutter ile yazıldı",
+
+
+  "titleNotificationThird": "WhatsApp",
+  "messageNotificationThird": "Bu benim WhatsApp numaram (+994509794981), benimle hemen iletişime geçebilirsiniz.",
+  "buttonDownloading": "İndiriliyor...",
+  "buttonDownload": "İndir",
+  "buttonClose": "Kapat",
+  "descriptionOfGreenPay": "GreenPay’de ödeme sistemleri ile entegrasyonları gerçekleştiriyorum, mobil tarafta ödeme mimarisini tasarlıyorum ve gelişmiş Flutter teknolojilerini kullanıyorum.",
+
+  "descriptionOfAlfaSoft": "Taxo, Yurd, Ruffle ve Emiland gibi tanınmış ürünler için Flutter kullanarak iyi yapılandırılmış ve ölçeklenebilir çapraz platform mobil uygulamalar geliştirdim. Gelişmiş durum yönetimi tekniklerini uyguladım ve Repository deseni ile temiz mimari prensiplerini kullanarak mimari tasarım üzerinde yakın iş birliği yaptım.",
+
+  "descriptionOfYupTech": "Miannonse, TezYu ve Zulamed dahil olmak üzere birden fazla mobil projeye katkıda bulundum. Yerel Android/iOS geliştirmeden Flutter geliştirmeye geçiş yaptım ve Zulamed’in tamamını sıfırdan, ileriye dönük yüksek seviyeli bir mimari kullanarak geliştirdim.",
+
+  "descriptionOfJeySoft": "Flutter ortamında Python kullanmadım. Yüz tanıma sistemleri için bir masaüstü uygulaması geliştirdim ve bu süreçte Flutter’ın geniş yerel depolama mantığını, SQLite dahil, kullandım."
+
+
 } 

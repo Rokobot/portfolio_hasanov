@@ -8,11 +8,11 @@ class AppConstants {
   static const String githubUrl = 'https://github.com/$githubUsername';
   static const String linkedinUrl = 'https://linkedin.com/in/alihasanov'; // Replace with actual LinkedIn
   static const String telegramUrl = 'https://t.me/alihasanov'; // Replace with actual Telegram
-  static const String whatsappNumber = '+994501234567'; // Replace with actual WhatsApp
-  static const String email = 'ali.hasanov@email.com'; // Replace with actual email
+  static const String whatsappNumber = '+994509794981'; // Replace with actual WhatsApp
+  static const String email = 'alihasanov2023@email.com'; // Replace with actual email
   
   // Experience
-  static const int yearsOfExperience = 3;
+  static const int yearsOfExperience = 4;
   static const int totalProjects = 9;
   
   // Assets Paths

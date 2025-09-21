@@ -87,5 +87,26 @@
   "chatbotSampleQuestions": "Sample questions:",
   
   "securityOverlayTitle": "This screen is currently hidden for security reasons. To view it, your cursor must remain on this page.",
-  "securityOverlayHint": "Click"
-} 
+  "securityOverlayHint": "Click",
+  "greenPayDescription": "International payment system",
+  "notifications": "Notifications",
+  "titleNotificationFirst": "Hello!",
+  "messageNotificationFirst": "This is my CV.",
+
+  "titleNotificationSecond": "Flutter App",
+  "messageNotificationSecond": "This website is built with Flutter",
+
+  "titleNotificationThird": "WhatsApp",
+  "messageNotificationThird": "This is my WhatsApp number (+994509794981), you can contact me right now.",
+  "buttonDownloading": "Downloading...",
+  "buttonDownload": "Download",
+  "buttonClose": "Close",
+  "descriptionOfGreenPay": "At GreenPay, I implement integrations with payment systems, including designing the payment architecture on the mobile side, and I use advanced Flutter technologies.",
+
+  "descriptionOfAlfaSoft": "Developed well-structured and scalable cross-platform mobile applications using Flutter for renowned products like Taxo, Yurd, Ruffle, and Emiland. Applied advanced state management techniques and collaborated closely on architectural design using Repository pattern and clean architecture principles.",
+
+  "descriptionOfYupTech": "Contributed to multiple mobile projects including Miannonse, TezYu, and Zulamed. Transitioned from native Android/iOS to Flutter development, and led the complete development of Zulamed from scratch using a high-level future-proof architecture.",
+
+  "descriptionOfJeySoft": "I have not used Python in the Flutter environment. I have developed a desktop application for face recognition systems, and in this process, I utilized Flutter’s extensive local storage logic, including SQLite."
+
+}

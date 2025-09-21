@@ -42,7 +42,7 @@ class ExperienceSection extends StatelessWidget {
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 3,
+                    itemCount: 4,
                     itemBuilder: (context, index) => _AnimatedExperienceCard(
                       index: index,
                       isDarkMode: appProvider.isDarkMode,
@@ -133,50 +133,41 @@ class _AnimatedExperienceCardState extends State<_AnimatedExperienceCard>
 
   @override
   Widget build(BuildContext context) {
+
+    var l10n = AppLocalizations.of(context);
+
     final experiences = [
       {
         'title': 'Middle Flutter Developer',
         'company': 'GreenPay',
-        'period': '2022 - Present',
-        'description': 'At GreenPay, I implement integrations with payment systems, including designing the payment architecture on the mobile side, and I use advanced Flutter technologies.',
-        'achievements': [
-          'Integrated multiple national and international payment systems into mobile apps',
-          'Designed and implemented scalable payment architecture for GreenPay mobile platform',
-          'Utilized advanced Flutter techniques including custom animations, state management (Provider, Bloc), and performance optimization',
-          'Collaborated with backend team to optimize API communication and data security',
-          'Provided code reviews and Flutter mentorship within the team'
-        ],
-        'icon': Icons.code,
+        'period': '2023 - ${l10n.present}',
+        'description': l10n.descriptionOfGreenPay,
+        'icon': Icons.computer_rounded,
         'color': const Color(0xFF4CAF50),
       },
       {
         'title': 'Middle Flutter Developer',
         'company': 'Alfa Soft',
-        'period': '2020 - 2022',
-        'description': '"Developed well-structured and scalable cross-platform mobile applications using Flutter for renowned products like Taxo, Yurd, Ruffle, and Emiland. Applied advanced state management techniques and collaborated closely on architectural design using Repository pattern and clean architecture principles."',
-        "achievements": [
-          "Implemented advanced state management solutions using Bloc, Cubit, and Provider",
-          "Designed and maintained modular Repository architecture for scalable codebase",
-          "Collaborated with product teams to integrate payment gateways, analytics, and third-party APIs",
-          "Optimized app performance and load time by 30% through profiling and best practices"
-        ],
-        'icon': Icons.mobile_friendly,
+        'period': '2022 - 2023',
+        'description': l10n.descriptionOfAlfaSoft,
+        'icon': Icons.computer_rounded,
         'color': const Color(0xFF2196F3),
       },
       {
-        'title': 'Flutter Developer',
+        'title': 'Flutter Developer (Remote)',
         'company': 'Yup Tech',
-        'period': '2018 - 2020',
-        'description': 'Contributed to multiple mobile projects including Miannonse, TezYu, and Zulamed. Transitioned from native Android/iOS to Flutter development, and led the complete development of Zulamed from scratch using a high-level future-proof architecture.',
-        "achievements": [
-          "Built Zulamed app from the ground up with scalable Future-based architecture",
-          "Participated in the development of Miannonse and TezYu mobile applications",
-          "Gained solid experience transitioning from native to cross-platform Flutter development",
-          "Designed clean and modular project structures using best Flutter practices",
-          "Collaborated with backend teams to integrate REST APIs and ensure seamless data flow"
-        ],
-        'icon': Icons.phone_android,
+        'period': '2022 - 2023',
+        'description': l10n.descriptionOfYupTech,
+        'icon': Icons.computer_rounded,
         'color': const Color(0xFFFF9800),
+      },
+      {
+        'title': 'Flutter Developer',
+        'company': 'Jey Soft',
+        'period': '2021 - 2022',
+        'description': l10n.descriptionOfJeySoft,
+        'icon': Icons.computer_rounded,
+        'color': const Color(0xFFFF00EA),
       },
     ];
 
@@ -345,7 +336,7 @@ class _AnimatedExperienceCardState extends State<_AnimatedExperienceCard>
                             ),
                             const SizedBox(height: 20),
                             
-                            // Achievements
+                          /*  // Achievements
                             AnimatedDefaultTextStyle(
                               duration: const Duration(milliseconds: 400),
                               curve: Curves.easeOutCubic,
@@ -411,7 +402,7 @@ class _AnimatedExperienceCardState extends State<_AnimatedExperienceCard>
                                   );
                                 },
                               );
-                            })).toList(),
+                            })).toList(),*/
                           ],
                         ),
                       ),

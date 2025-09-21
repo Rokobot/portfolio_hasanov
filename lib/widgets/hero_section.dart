@@ -66,10 +66,10 @@ class HeroSection extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 32),
+          //      const SizedBox(height: 32),
                 
                 // Skills Animation
-                Wrap(
+               /* Wrap(
                   spacing: 16,
                   runSpacing: 16,
                   alignment: WrapAlignment.center,
@@ -78,7 +78,7 @@ class HeroSection extends StatelessWidget {
                     _buildSkillChip(l10n.heroSkill2),
                     _buildSkillChip(l10n.heroSkill3),
                   ],
-                ),
+                ),*/
                 const SizedBox(height: 48),
                 
                 // CTA Buttons
