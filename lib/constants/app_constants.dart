@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppConstants {
   // Developer Information
   static const String developerName = 'Ali Hasanov';
-  static const String developerTitle = 'Senior Flutter Developer';
+  static const String developerTitle = 'Flutter Developer';
   static const String githubUsername = 'alihasanov'; // Replace with actual GitHub username
   static const String githubUrl = 'https://github.com/$githubUsername';
   static const String linkedinUrl = 'https://linkedin.com/in/alihasanov'; // Replace with actual LinkedIn

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:html' as html;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,7 +10,9 @@ import 'package:provider/provider.dart';
 
 import '../providers/app_provider.dart';
 import 'app_theme.dart';
-
+import 'dart:typed_data';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/services.dart';
 
 
 class NotificationDemo extends StatefulWidget {
@@ -28,6 +31,8 @@ class _NotificationDemoState extends State<NotificationDemo>
   List<NotificationItem> _notifications = [];
   bool _dialogOpen = false;
   final AudioPlayer _audioPlayer = AudioPlayer();
+
+  final player = AudioPlayer();
   late List<NotificationItem> allNotifications;
 
 
@@ -46,7 +51,7 @@ class _NotificationDemoState extends State<NotificationDemo>
 
 
 
-    Timer(const Duration(seconds: 1), () => _addNotification(allNotifications, 0));
+    Timer(const Duration(seconds: 8), () => _addNotification(allNotifications, 0));
 
 
     Timer(const Duration(seconds: 16), () => _addNotification(allNotifications, 1));
@@ -55,8 +60,20 @@ class _NotificationDemoState extends State<NotificationDemo>
 
 
 
-  void _playSoundWeb() {
-    final audio = html.AudioElement('assets/sounds/notification_sound.wav');
+  void _playSoundWeb()async {
+   final audio = html.AudioElement('assets/sounds/notification_sound.wav');
+    /*AudioPlayer player = AudioPlayer();
+    String audioasset = "assets/icons/notification.mp3";
+    ByteData bytes =
+    await rootBundle.load(audioasset); //load sound from assets
+    Uint8List soundbytes =
+    bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
+
+    final urlSource = UrlSource(
+        Uri.dataFromBytes(soundbytes, mimeType: 'audio/mpeg').toString());
+
+    player.play(urlSource);*/
+
     audio.play();
   }
 
@@ -196,8 +213,11 @@ class _NotificationDemoState extends State<NotificationDemo>
                 children: [
 
                   if(!_hasUnread)
-                  const Icon(Icons.notifications_none,
-                      size: 30, color: Colors.white),
+                    SizedBox(
+                      height: 30,
+                      width: 30,
+                      child: SvgPicture.asset("assets/icons/notification.svg", color: Colors.white,),
+                    ),
                   if (_hasUnread)
                     Positioned(
                       top: 10,
@@ -291,7 +311,11 @@ class _NotificationIconState extends State<_NotificationIcon>
           angle: _shakeAnim.value * (sin(DateTime.now().millisecondsSinceEpoch / 50)),
           alignment: Alignment.topCenter, // zəng effekti pivot yuxarıda
           child:
-          Icon(Icons.notifications, color: Colors.red,size: 30,)
+          SizedBox(
+            height: 30,
+            width: 30,
+            child: SvgPicture.asset("assets/icons/notification.svg", color: Colors.red,),
+          ),
 
           /*Container(
             width: 14,

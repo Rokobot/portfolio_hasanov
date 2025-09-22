@@ -465,7 +465,7 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
                       const SizedBox(width: 16),
                     ],
                     if (project.hasGithubUrl) ...[
-                      Expanded(
+                      /*Expanded(
                         child: _AnimatedActionButton(
                           label: 'GitHub',
                           icon: Icons.code,
@@ -474,7 +474,7 @@ class _ProjectDetailPageState extends State<ProjectDetailPage>
                           onPressed: () => _launchUrl(project.githubUrl),
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      const SizedBox(width: 16),*/
                     ],
                     Expanded(
                       child: _AnimatedActionButton(

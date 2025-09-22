@@ -13,11 +13,11 @@ class AppTheme {
   static const Color accentColor = Color(0xFF64FFDA);
   
   // Light Colors - #bae2f5 teması
-  static const Color backgroundColorLight = Color(0xFFBAE2F5); // Ana renk
-  static const Color surfaceColorLight = Color(0xFFDCF1FF); // Daha açık ton
-  static const Color cardColorLight = Color(0xFFFFFFFF); // Beyaz kartlar
-  static const Color textPrimaryColorLight = Color(0xFF1A1A1A); // Koyu metin
-  static const Color textSecondaryColorLight = Color(0xFF4A4A4A); // Orta ton metin
+  static const Color backgroundColorLight = Color(0xFFBAE2F5);
+  static const Color surfaceColorLight = Color(0xFFDCF1FF);
+  static const Color cardColorLight = Color(0xFFFFFFFF);
+  static const Color textPrimaryColorLight = Color(0xFF1A1A1A);
+  static const Color textSecondaryColorLight = Color(0xFF4A4A4A);
   
   // Dynamic Colors (getter methods for theme-aware colors)
   static Color getBackgroundColor(bool isDark) => 

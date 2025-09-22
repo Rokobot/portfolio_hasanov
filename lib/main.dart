@@ -1,17 +1,25 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'firebase_options.dart';
 import 'utils/app_theme.dart';
 import 'constants/app_constants.dart';
 import 'providers/app_provider.dart';
 import 'screens/home_screen.dart';
 import 'security/security_overlay_wrapper.dart';
 
-void main() {
+void main() async{
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const PortfolioApp());
+
+
 }
 
 // Smooth scroll behavior sınıfı
@@ -22,6 +30,8 @@ class SmoothScrollBehavior extends MaterialScrollBehavior {
     PointerDeviceKind.mouse,
     PointerDeviceKind.stylus,
     PointerDeviceKind.trackpad,
+
+
   };
   
   @override

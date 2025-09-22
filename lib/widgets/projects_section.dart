@@ -160,7 +160,7 @@ class _AnimatedProjectCardState extends State<_AnimatedProjectCard>
       image: projectData['image'] as String? ?? 'assets/images/default_project.png',
       technologies: List<String>.from(projectData['technologies'] as List),
       githubUrl: 'https://github.com/alihasanov/flutter-project-${widget.index + 1}',
-      liveUrl: 'https://flutter-project-${widget.index + 1}.web.app',
+      liveUrl: widget.index == 1? 'https://apps.apple.com/az/app/tezyu/id6751160441' : widget.index == 6? "https://play.google.com/store/apps/details?id=com.superfon.yurdapp&pcampaignid=web_share":"",
       featured: widget.index == 0,
       year: 2024,
     );

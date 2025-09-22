@@ -30,9 +30,9 @@ class HeroSection extends StatelessWidget {
                 CircleAvatar(
                   radius: ResponsiveHelper.getValue(
                     context, 
-                    mobile: 60.0, 
+                    mobile: 60.0,
                     tablet: 80.0, 
-                    desktop: 100.0,
+                    desktop: 200.0,
                   ),
                   backgroundImage: const AssetImage(AppConstants.defaultProfileImage),
                 ),

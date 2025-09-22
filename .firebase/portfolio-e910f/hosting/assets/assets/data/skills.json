@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Flutter",
+    "level": 95,
+    "category": "Mobile Development",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 2,
+    "name": "Dart",
+    "level": 95,
+    "category": "Programming Language",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 3,
+    "name": "Firebase",
+    "level": 85,
+    "category": "Backend",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 4,
+    "name": "REST API",
+    "level": 90,
+    "category": "Backend",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 5,
+    "name": "Provider",
+    "level": 90,
+    "category": "State Management",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 6,
+    "name": "Bloc",
+    "level": 85,
+    "category": "State Management",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 7,
+    "name": "Git",
+    "level": 90,
+    "category": "Version Control",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 8,
+    "name": "SQL",
+    "level": 80,
+    "category": "Database",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 9,
+    "name": "Docker",
+    "level": 75,
+    "category": "DevOps",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 10,
+    "name": "AWS",
+    "level": 70,
+    "category": "Cloud",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 11,
+    "name": "Node.js",
+    "level": 80,
+    "category": "Backend",
+    "icon": "assets/images/default_skill.png"
+  },
+  {
+    "id": 12,
+    "name": "GraphQL",
+    "level": 75,
+    "category": "Backend",
+    "icon": "assets/images/default_skill.png"
+  }
+] 
