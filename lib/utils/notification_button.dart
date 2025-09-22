@@ -14,7 +14,9 @@ import 'dart:typed_data';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart';
 
-
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
 class NotificationDemo extends StatefulWidget {
   const NotificationDemo({super.key});
 
@@ -135,8 +137,14 @@ class _NotificationDemoState extends State<NotificationDemo>
                           ),
                           trailing: item.showDownloadButton
                               ? TextButton(
-                            onPressed: () {
-
+                            onPressed: () async{
+                              final bytes = await rootBundle.load('assets/cv/cv_of_ali_hasanov.pdf');
+                              final blob = html.Blob([bytes.buffer.asUint8List()]);
+                              final url = html.Url.createObjectUrlFromBlob(blob);
+                              final anchor = html.AnchorElement(href: url)
+                                ..setAttribute("download", "cv_of_ali_hasanov.pdf")
+                                ..click();
+                              html.Url.revokeObjectUrl(url);
                               Navigator.of(context).pop();
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(content: Text(

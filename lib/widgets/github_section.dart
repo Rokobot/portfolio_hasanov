@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -6,6 +7,11 @@ import '../providers/app_provider.dart';
 import '../utils/app_theme.dart';
 import '../utils/responsive_helper.dart';
 import '../constants/app_constants.dart';
+
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
+import 'dart:html' as html;
 
 class GitHubSection extends StatefulWidget {
   const GitHubSection({super.key});
@@ -821,7 +827,21 @@ class _AnimatedCVButtonState extends State<_AnimatedCVButton>
                 ],
               ),
               child: ElevatedButton.icon(
-                onPressed: widget.onPressed,
+                onPressed: ()async{
+                  final bytes = await rootBundle.load('assets/cv/cv_of_ali_hasanov.pdf');
+                  final blob = html.Blob([bytes.buffer.asUint8List()]);
+                  final url = html.Url.createObjectUrlFromBlob(blob);
+                  final anchor = html.AnchorElement(href: url)
+                    ..setAttribute("download", "cv_of_ali_hasanov.pdf")
+                    ..click();
+                  html.Url.revokeObjectUrl(url);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(
+                      AppLocalizations.of(context).buttonDownloading,
+                      style: TextStyle(color: AppTheme.primaryColor)
+                    ) ),
+                  );
+                },
                 icon: TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 300),
                   tween: Tween<double>(

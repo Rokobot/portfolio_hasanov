@@ -124,5 +124,6 @@ flutter:
     - assets/animations/
     - assets/data/
     - assets/sounds/notification_sound.wav
+    - assets/cv/
 
 
